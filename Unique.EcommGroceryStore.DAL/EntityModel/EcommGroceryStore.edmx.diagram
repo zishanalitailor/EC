@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="440e0a2023264a1db025f37caa07f683" Name="Diagram1">
+        <EntityTypeShape EntityType="EcommGroceryOnlineModel.AddressDetails" Width="1.5" PointX="5.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommGroceryOnlineModel.AreaMaster" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommGroceryOnlineModel.Cart" Width="1.5" PointX="5.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommGroceryOnlineModel.CartDetail" Width="1.5" PointX="7.5" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommGroceryOnlineModel.CityMaster" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommGroceryOnlineModel.CountryMaster" Width="1.5" PointX="1.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommGroceryOnlineModel.CouponDetails" Width="1.5" PointX="5.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommGroceryOnlineModel.FollowUpDetails" Width="1.5" PointX="5.25" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommGroceryOnlineModel.MainCategoryMaster" Width="1.5" PointX="0.75" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommGroceryOnlineModel.ProductDetails" Width="1.5" PointX="5.25" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommGroceryOnlineModel.Roles" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommGroceryOnlineModel.SubCategoryMaster" Width="1.5" PointX="3" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommGroceryOnlineModel.TransactionDetails" Width="1.5" PointX="7.5" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommGroceryOnlineModel.Users" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <AssociationConnector Association="EcommGroceryOnlineModel.FK_AddressDetails_AreaMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommGroceryOnlineModel.FK_AddressDetails_CityMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommGroceryOnlineModel.FK_AddressDetails_CountryMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommGroceryOnlineModel.FK_AddressDetails_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommGroceryOnlineModel.FK_AreaMaster_CityMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommGroceryOnlineModel.FK_CardDetail_Cart" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommGroceryOnlineModel.FK_Cart_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommGroceryOnlineModel.FK_TransactionDetails_Cart" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommGroceryOnlineModel.FK_CartDetail_ProductDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommGroceryOnlineModel.FK_CityMaster_CountryMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommGroceryOnlineModel.FK_FollowUpDetails_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommGroceryOnlineModel.FK_SubCategoryMaster_MainCategoryMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommGroceryOnlineModel.FK_ProductDetails_SubCategoryMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommGroceryOnlineModel.FK_Users_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommGroceryOnlineModel.FK_TransactionDetails_Users" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

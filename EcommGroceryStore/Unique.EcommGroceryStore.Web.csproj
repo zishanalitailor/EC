@@ -1,0 +1,1667 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F1B883BF-0A4D-4C9E-9171-63D64490CCA0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EcommGroceryStore</RootNamespace>
+    <AssemblyName>EcommGroceryStore</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ionic.Zip.Reduced">
+      <HintPath>..\..\..\..\Users\zt\Downloads\OGS\EcommGroceryStore\bin\Ionic.Zip.Reduced.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.0.0\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.10.2\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Account\AddPhoneNumber.aspx" />
+    <Content Include="Account\Confirm.aspx" />
+    <Content Include="Account\Forgot.aspx" />
+    <Content Include="Account\Lockout.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Manage.aspx" />
+    <Content Include="Account\ManageLogins.aspx" />
+    <Content Include="Account\ManagePassword.aspx" />
+    <Content Include="Apps\Admin\Default.aspx" />
+    <Content Include="Apps\User\MyOrders.aspx" />
+    <Content Include="Account\OpenAuthProviders.ascx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="Account\ResetPassword.aspx" />
+    <Content Include="Account\ResetPasswordConfirmation.aspx" />
+    <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
+    <Content Include="Account\VerifyEmailAddress.aspx" />
+    <Content Include="Apps\Admin\ManageMasterCategory.aspx" />
+    <Content Include="Apps\Admin\ManageProductImages.aspx" />
+    <Content Include="Apps\Admin\ManageProductList.aspx" />
+    <Content Include="Apps\Admin\ManageProducts.aspx" />
+    <Content Include="Apps\Admin\ManageSubCategory.aspx" />
+    <Content Include="Apps\Admin\ManageTransaction.aspx" />
+    <Content Include="Apps\Admin\ManageUser.aspx" />
+    <Content Include="Apps\User\AddAddress.aspx" />
+    <Content Include="Apps\User\AddressBookList.aspx" />
+    <Content Include="Apps\User\ResetPassword.aspx" />
+    <Content Include="checkout.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\DataTables\dataTables.bootstrap.css" />
+    <Content Include="Content\DataTables\dataTables.bootstrap.min.js" />
+    <Content Include="Content\DataTables\dataTables.responsive.min.js" />
+    <Content Include="Content\DataTables\jquery.dataTables.min.js" />
+    <Content Include="Content\DataTables\responsive.dataTables.min.css" />
+    <Content Include="Content\DataTables\underscore.js" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Details.aspx" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Images\minus.png" />
+    <Content Include="Images\plus.png" />
+    <Content Include="media\js\jquery.accordion.js" />
+    <Content Include="products.aspx" />
+    <Content Include="indexchild.aspx" />
+    <Content Include="media\captcha\base\9f33330d1f8b301b6118eec308d88e67.png" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\0\8\080307081409-large.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\2\0\20080204233721_pear.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\2\0\20100801peach.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\2\5\25021.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\a\s\asparagus.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\a\v\avocado.png" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\a\w\awala.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\b\a\baby_corn.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\b\a\baby_potato.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\b\a\banana-flower.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\b\a\bananai.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\b\a\basil.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\b\e\beetroot-300x225-wa-scene.gif" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\b\i\bittergourd.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\b\o\bootlegourd.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\b\r\brinjal-long-green-1-kg.jpg.png" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\b\r\broccoli_0_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\c\a\cabbage.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\c\a\cantaloupe.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\c\a\carrat.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\c\a\carrotred1.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\c\a\cauliflower1.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\c\e\celery.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\c\h\chawali_long_beans.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\c\h\chikoo-600x600.png" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\c\o\coconuts11.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\c\o\coriander.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\c\o\corn.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\c\u\cucumber_2.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\c\u\curry_patta.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\d\r\drum_stick.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\f\i\fig.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\f\r\french-beans.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\g\a\garlic1.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\g\a\gawar_2.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\g\i\ginger_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\g\r\grapes_indian.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\g\r\green-pumpkin.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\g\r\greenpeas_225x318.ashx.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\g\r\greentomatocopyrightedimage1.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\g\r\green_coconut.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\g\r\green_cucumber.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\g\u\guava01.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\k\a\kamal-kakdi.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\k\i\kiwi-fruit.png" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\l\a\lady_finger_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\l\a\lal_math.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\l\e\lemon.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\l\e\lemongrass.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\l\e\lettuce.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\l\o\long-brinjal.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\m\a\madras-cucumber.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\m\e\methi_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\m\i\mint-leaves.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\m\i\mirchi.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\m\o\mosambi_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\m\u\mushrooms.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\o\n\onion.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\o\r\orangejunction.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\p\a\papaya.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\p\a\parsley_2.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\p\a\parwal.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\p\a\pawata.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\p\e\pealed-garlic.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\p\e\pear.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\p\i\pinapple.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\p\o\pomegranate.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\p\o\potatoes.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\r\a\raw-papaya-opt.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\r\a\raw_banna.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\r\e\red-pumpkin_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\r\e\red_apples-551.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\r\e\red_bell_pepper.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\r\e\red_grape.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\s\h\shepu_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\s\i\sitafhal.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\s\m\small-brinjal.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\s\p\spinach.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\s\p\spring-onion.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\s\t\strawberry.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\s\u\suran.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\s\w\sweet_potato.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\t\a\taro.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\t\o\tomato1.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\t\o\tomato_1.png" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\t\o\tondli_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\t\u\turai.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\t\u\turai_big.png" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\v\g\vg-000002019.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\w\a\washington_apple.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\w\a\watermelon.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\w\h\white-pumpkin.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\w\h\whiteonions.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\w\h\white_radish.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\y\e\yellow_bell_pepper.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\470x470\9df78eab33525d08d6e5fb8d27136e95\z\u\zucchini.png" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\2\0\20080204233721_pear.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\2\0\20100801peach.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\2\5\25021.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\a\s\asparagus.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\a\v\avocado.png" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\a\w\awala.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\b\a\baby_corn.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\b\a\baby_potato.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\b\a\banana-flower.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\b\a\bananai.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\b\a\basil.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\b\e\beetroot-300x225-wa-scene.gif" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\b\i\bittergourd.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\b\o\bootlegourd.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\b\r\brinjal-long-green-1-kg.jpg.png" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\b\r\broccoli_0_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\c\a\cabbage.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\c\a\cantaloupe.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\c\a\carrat.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\c\a\carrotred1.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\c\a\cauliflower1.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\c\e\celery.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\c\h\chawali_long_beans.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\c\h\chikoo-600x600.png" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\c\o\coconuts11.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\c\o\coriander.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\c\o\corn.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\c\u\cucumber_2.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\c\u\curry_patta.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\d\r\drum_stick.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\f\i\fig.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\f\r\french-beans.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\g\a\garlic1.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\g\a\gawar_2.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\g\i\ginger_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\g\r\grapes_indian.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\g\r\green-pumpkin.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\g\r\greenpeas_225x318.ashx.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\g\r\greentomatocopyrightedimage1.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\g\r\green_coconut.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\g\r\green_cucumber.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\g\u\guava01.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\k\a\kamal-kakdi.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\k\i\kiwi-fruit.png" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\l\a\lady_finger_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\l\a\lal_math.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\l\e\lemon.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\l\e\lemongrass.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\l\e\lettuce.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\l\o\long-brinjal.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\m\a\madras-cucumber.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\m\e\methi_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\m\i\mint-leaves.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\m\i\mirchi.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\m\o\mosambi_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\m\u\mushrooms.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\o\n\onion.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\o\r\orangejunction.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\p\a\papaya.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\p\a\parsley_2.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\p\a\parwal.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\p\a\pawata.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\p\e\pealed-garlic.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\p\e\pear.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\p\i\pinapple.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\p\o\pomegranate.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\p\o\potatoes.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\r\a\raw-papaya-opt.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\r\a\raw_banna.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\r\e\red-pumpkin_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\r\e\red_apples-551.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\r\e\red_bell_pepper.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\r\e\red_grape.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\s\h\shepu_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\s\i\sitafhal.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\s\m\small-brinjal.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\s\p\spinach.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\s\p\spring-onion.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\s\t\strawberry.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\s\u\suran.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\s\w\sweet_potato.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\t\a\taro.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\t\o\tomato1.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\t\o\tomato_1.png" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\t\o\tondli_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\t\u\turai.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\t\u\turai_big.png" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\v\g\vg-000002019.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\w\a\washington_apple.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\w\a\watermelon.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\w\h\white-pumpkin.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\w\h\whiteonions.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\w\h\white_radish.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\y\e\yellow_bell_pepper.jpg" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\z\u\zucchini.png" />
+    <Content Include="media\catalog\product\cache\1\small_image\200x200\9df78eab33525d08d6e5fb8d27136e95\a\s\asparagus.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\200x200\9df78eab33525d08d6e5fb8d27136e95\a\v\avocado.png" />
+    <Content Include="media\catalog\product\cache\1\small_image\200x200\9df78eab33525d08d6e5fb8d27136e95\a\w\awala.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\200x200\9df78eab33525d08d6e5fb8d27136e95\b\a\baby_corn.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\200x200\9df78eab33525d08d6e5fb8d27136e95\b\a\baby_potato.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\200x200\9df78eab33525d08d6e5fb8d27136e95\b\a\banana-flower.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\200x200\9df78eab33525d08d6e5fb8d27136e95\b\a\bananai.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\200x200\9df78eab33525d08d6e5fb8d27136e95\b\a\basil.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\200x200\9df78eab33525d08d6e5fb8d27136e95\b\e\beetroot-300x225-wa-scene.gif" />
+    <Content Include="media\catalog\product\cache\1\small_image\200x200\9df78eab33525d08d6e5fb8d27136e95\b\i\bittergourd.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\200x200\9df78eab33525d08d6e5fb8d27136e95\c\a\cabbage.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\200x200\9df78eab33525d08d6e5fb8d27136e95\c\a\cantaloupe.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\200x200\9df78eab33525d08d6e5fb8d27136e95\c\a\carrat.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\200x200\9df78eab33525d08d6e5fb8d27136e95\c\a\cauliflower1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\200x200\9df78eab33525d08d6e5fb8d27136e95\c\h\chikoo-600x600.png" />
+    <Content Include="media\catalog\product\cache\1\small_image\200x200\9df78eab33525d08d6e5fb8d27136e95\c\u\cucumber_2.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\200x200\9df78eab33525d08d6e5fb8d27136e95\g\a\garlic1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\200x200\9df78eab33525d08d6e5fb8d27136e95\g\i\ginger_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\200x200\9df78eab33525d08d6e5fb8d27136e95\g\r\greenpeas_225x318.ashx.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\200x200\9df78eab33525d08d6e5fb8d27136e95\g\u\guava01.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\200x200\9df78eab33525d08d6e5fb8d27136e95\m\i\mint-leaves.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\200x200\9df78eab33525d08d6e5fb8d27136e95\m\o\mosambi_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\200x200\9df78eab33525d08d6e5fb8d27136e95\o\n\onion.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\200x200\9df78eab33525d08d6e5fb8d27136e95\o\r\orangejunction.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\200x200\9df78eab33525d08d6e5fb8d27136e95\p\a\parsley_2.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\200x200\9df78eab33525d08d6e5fb8d27136e95\p\i\pinapple.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\200x200\9df78eab33525d08d6e5fb8d27136e95\p\o\pomegranate.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\200x200\9df78eab33525d08d6e5fb8d27136e95\r\e\red_apples-551.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\200x200\9df78eab33525d08d6e5fb8d27136e95\s\i\sitafhal.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\200x200\9df78eab33525d08d6e5fb8d27136e95\s\m\small-brinjal.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\200x200\9df78eab33525d08d6e5fb8d27136e95\t\u\turai_big.png" />
+    <Content Include="media\catalog\product\cache\1\small_image\200x200\9df78eab33525d08d6e5fb8d27136e95\w\a\washington_apple.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\0\8\080307081409-large.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\2\0\20080204233721_pear.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\2\5\25021.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\a\s\asparagus.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\a\v\avocado.png" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\a\w\awala.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\b\a\baby_corn.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\b\a\baby_potato.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\b\a\banana-flower.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\b\a\basil.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\b\e\beetroot-300x225-wa-scene.gif" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\b\i\bittergourd.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\b\o\bootlegourd.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\b\r\brinjal-long-green-1-kg.jpg.png" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\b\r\broccoli_0_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\c\a\cabbage.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\c\a\carrat.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\c\a\carrotred1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\c\a\cauliflower1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\c\e\celery.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\c\h\chawali_long_beans.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\c\o\coriander.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\c\o\corn.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\c\u\cucumber_2.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\c\u\curry_patta.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\d\r\drum_stick.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\f\i\fig.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\f\r\french-beans.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\g\a\garlic1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\g\a\gawar_2.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\g\i\ginger_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\g\r\grapes_indian.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\g\r\green-pumpkin.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\g\r\greenpeas_225x318.ashx.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\g\r\greentomatocopyrightedimage1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\g\r\green_cucumber.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\k\a\kamal-kakdi.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\l\a\lady_finger_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\l\a\lal_math.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\l\e\lemon.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\l\e\lemongrass.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\l\e\lettuce.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\l\o\long-brinjal.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\m\a\madras-cucumber.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\m\e\methi_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\m\i\mint-leaves.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\m\i\mirchi.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\m\o\mosambi_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\m\u\mushrooms.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\o\n\onion.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\p\a\parsley_2.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\p\a\parwal.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\p\a\pawata.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\p\e\pealed-garlic.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\p\e\pear.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\p\o\potatoes.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\r\a\raw-papaya-opt.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\r\a\raw_banna.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\r\e\red-pumpkin_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\r\e\red_bell_pepper.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\s\h\shepu_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\s\m\small-brinjal.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\s\p\spinach.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\s\p\spring-onion.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\s\u\suran.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\s\w\sweet_potato.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\t\a\taro.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\t\o\tomato1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\t\o\tomato_1.png" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\t\o\tondli_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\t\u\turai.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\t\u\turai_big.png" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\v\g\vg-000002019.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\w\h\white-pumpkin.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\w\h\whiteonions.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\w\h\white_radish.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\y\e\yellow_bell_pepper.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\170ec19af00183b5e0368529fc2daa2f\z\u\zucchini.png" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\0\8\080307081409-large.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\2\0\20080204233721_pear.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\2\0\20100801peach.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\2\5\25021.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\a\s\asparagus.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\a\v\avocado.png" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\a\w\awala.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\b\a\baby_corn.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\b\a\baby_potato.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\b\a\banana-flower.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\b\a\bananai.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\b\a\basil.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\b\e\beetroot-300x225-wa-scene.gif" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\b\i\bittergourd.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\b\o\bootlegourd.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\b\r\brinjal-long-green-1-kg.jpg.png" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\b\r\broccoli_0_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\c\a\cabbage.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\c\a\cantaloupe.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\c\a\carrat.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\c\a\carrotred1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\c\a\cauliflower1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\c\e\celery.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\c\h\chawali_long_beans.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\c\h\chikoo-600x600.png" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\c\o\coconuts11.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\c\o\coriander.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\c\o\corn.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\c\u\cucumber_2.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\c\u\curry_patta.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\d\r\drum_stick.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\f\i\fig.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\f\r\french-beans.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\g\a\garlic1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\g\a\gawar_2.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\g\i\ginger_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\g\r\grapes_indian.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\g\r\green-pumpkin.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\g\r\greenpeas_225x318.ashx.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\g\r\greentomatocopyrightedimage1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\g\r\green_coconut.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\g\r\green_cucumber.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\g\u\guava01.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\k\a\kamal-kakdi.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\k\i\kiwi-fruit.png" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\l\a\lady_finger_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\l\a\lal_math.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\l\e\lemon.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\l\e\lemongrass.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\l\e\lettuce.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\l\o\long-brinjal.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\m\a\madras-cucumber.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\m\e\methi_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\m\i\mint-leaves.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\m\i\mirchi.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\m\o\mosambi_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\m\u\mushrooms.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\o\n\onion.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\o\r\orangejunction.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\p\a\papaya.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\p\a\parsley_2.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\p\a\parwal.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\p\a\pawata.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\p\e\pealed-garlic.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\p\e\pear.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\p\i\pinapple.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\p\o\pomegranate.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\p\o\potatoes.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\r\a\raw-papaya-opt.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\r\a\raw_banna.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\r\e\red-pumpkin_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\r\e\red_apples-551.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\r\e\red_bell_pepper.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\r\e\red_grape.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\s\h\shepu_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\s\i\sitafhal.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\s\m\small-brinjal.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\s\p\spinach.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\s\p\spring-onion.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\s\t\strawberry.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\s\u\suran.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\s\w\sweet_potato.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\t\a\taro.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\t\o\tomato1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\t\o\tomato_1.png" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\t\o\tondli_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\t\u\turai.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\t\u\turai_big.png" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\v\g\vg-000002019.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\w\a\washington_apple.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\w\a\watermelon.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\w\h\white-pumpkin.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\w\h\whiteonions.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\w\h\white_radish.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\y\e\yellow_bell_pepper.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\370x\9df78eab33525d08d6e5fb8d27136e95\z\u\zucchini.png" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\0\8\080307081409-large.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\2\0\20080204233721_pear.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\2\0\20100801peach.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\2\5\25021.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\a\s\asparagus.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\a\v\avocado.png" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\a\w\awala.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\b\a\baby_corn.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\b\a\baby_potato.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\b\a\banana-flower.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\b\a\bananai.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\b\a\basil.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\b\e\beetroot-300x225-wa-scene.gif" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\b\i\bittergourd.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\b\o\bootlegourd.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\b\r\brinjal-long-green-1-kg.jpg.png" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\b\r\broccoli_0_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\c\a\cabbage.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\c\a\cantaloupe.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\c\a\carrat.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\c\a\carrotred1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\c\a\cauliflower1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\c\e\celery.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\c\h\chawali_long_beans.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\c\h\chikoo-600x600.png" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\c\o\coconuts11.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\c\o\coriander.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\c\o\corn.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\c\u\cucumber_2.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\c\u\curry_patta.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\d\r\drum_stick.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\f\i\fig.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\f\r\french-beans.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\g\a\garlic1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\g\a\gawar_2.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\g\i\ginger_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\g\r\grapes_indian.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\g\r\green-pumpkin.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\g\r\greenpeas_225x318.ashx.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\g\r\greentomatocopyrightedimage1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\g\r\green_coconut.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\g\r\green_cucumber.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\g\u\guava01.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\k\a\kamal-kakdi.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\k\i\kiwi-fruit.png" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\l\a\lady_finger_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\l\a\lal_math.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\l\e\lemon.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\l\e\lemongrass.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\l\e\lettuce.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\l\o\long-brinjal.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\m\a\madras-cucumber.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\m\e\methi_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\m\i\mint-leaves.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\m\i\mirchi.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\m\o\mosambi_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\m\u\mushrooms.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\o\n\onion.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\o\r\orangejunction.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\p\a\papaya.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\p\a\parsley_2.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\p\a\parwal.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\p\a\pawata.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\p\e\pealed-garlic.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\p\e\pear.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\p\i\pinapple.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\p\o\pomegranate.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\p\o\potatoes.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\r\a\raw-papaya-opt.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\r\a\raw_banna.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\r\e\red-pumpkin_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\r\e\red_apples-551.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\r\e\red_bell_pepper.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\r\e\red_grape.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\s\h\shepu_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\s\i\sitafhal.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\s\m\small-brinjal.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\s\p\spinach.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\s\p\spring-onion.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\s\t\strawberry.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\s\u\suran.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\s\w\sweet_potato.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\t\a\taro.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\t\o\tomato1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\t\o\tomato_1.png" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\t\o\tondli_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\t\u\turai.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\t\u\turai_big.png" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\v\g\vg-000002019.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\w\a\washington_apple.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\w\a\watermelon.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\w\h\white-pumpkin.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\w\h\whiteonions.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\w\h\white_radish.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\y\e\yellow_bell_pepper.jpg" />
+    <Content Include="media\catalog\product\cache\1\small_image\9df78eab33525d08d6e5fb8d27136e95\z\u\zucchini.png" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\0\8\080307081409-large.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\2\0\20080204233721_pear.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\2\0\20100801peach.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\2\5\25021.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\a\s\asparagus.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\a\v\avocado.png" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\a\w\awala.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\b\a\baby_corn.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\b\a\baby_potato.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\b\a\bananai.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\b\a\basil.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\b\e\beetroot-300x225-wa-scene.gif" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\b\o\bootlegourd.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\b\r\brinjal-long-green-1-kg.jpg.png" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\b\r\broccoli_0_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\c\a\cabbage.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\c\a\cantaloupe.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\c\a\carrat.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\c\a\carrotred1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\c\a\cauliflower1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\c\e\celery.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\c\h\chawali_long_beans.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\c\h\chikoo-600x600.png" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\c\o\coriander.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\c\o\corn.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\c\u\cucumber_2.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\c\u\curry_patta.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\d\r\drum_stick.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\f\i\fig.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\f\r\french-beans.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\g\a\garlic1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\g\a\gawar_2.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\g\i\ginger_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\g\r\grapes_indian.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\g\r\green-pumpkin.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\g\r\greenpeas_225x318.ashx.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\g\r\green_coconut.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\g\r\green_cucumber.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\g\u\guava01.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\l\a\lady_finger_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\l\a\lal_math.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\l\e\lemon.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\l\e\lemongrass.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\l\e\lettuce.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\l\o\long-brinjal.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\m\a\madras-cucumber.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\m\e\methi_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\m\i\mint-leaves.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\m\i\mirchi.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\m\o\mosambi_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\m\u\mushrooms.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\o\n\onion.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\o\r\orangejunction.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\p\a\papaya.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\p\a\parsley_2.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\p\a\parwal.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\p\a\pawata.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\p\e\pealed-garlic.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\p\e\pear.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\p\i\pinapple.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\p\o\pomegranate.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\p\o\potatoes.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\r\a\raw_banna.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\r\e\red-pumpkin_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\r\e\red_apples-551.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\r\e\red_bell_pepper.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\r\e\red_grape.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\s\h\shepu_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\s\i\sitafhal.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\s\m\small-brinjal.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\s\p\spinach.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\s\p\spring-onion.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\s\t\strawberry.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\s\u\suran.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\s\w\sweet_potato.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\t\a\taro.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\t\o\tomato1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\t\o\tomato_1.png" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\t\o\tondli_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\t\u\turai.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\t\u\turai_big.png" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\v\g\vg-000002019.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\w\a\washington_apple.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\w\a\watermelon.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\w\h\white_radish.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\y\e\yellow_bell_pepper.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\100x\9df78eab33525d08d6e5fb8d27136e95\z\u\zucchini.png" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\2\0\20080204233721_pear.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\2\0\20100801peach.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\a\s\asparagus.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\a\v\avocado.png" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\a\w\awala.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\b\a\baby_corn.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\b\a\baby_potato.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\b\a\banana-flower.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\b\a\basil.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\b\e\beetroot-300x225-wa-scene.gif" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\b\i\bittergourd.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\b\o\bootlegourd.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\c\a\cabbage.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\c\a\cantaloupe.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\c\a\carrotred1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\c\a\cauliflower1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\c\e\celery.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\c\h\chawali_long_beans.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\c\o\coconuts11.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\c\o\coriander.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\c\o\corn.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\c\u\cucumber_2.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\c\u\curry_patta.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\f\i\fig.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\f\r\french-beans.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\g\a\garlic1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\g\a\gawar_2.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\g\i\ginger_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\g\r\grapes_indian.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\g\r\green-pumpkin.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\g\r\greenpeas_225x318.ashx.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\g\r\greentomatocopyrightedimage1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\g\r\green_coconut.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\g\r\green_cucumber.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\g\u\guava01.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\k\a\kamal-kakdi.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\k\i\kiwi-fruit.png" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\l\a\lady_finger_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\l\e\lemongrass.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\l\e\lettuce.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\l\o\long-brinjal.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\m\a\madras-cucumber.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\m\e\methi_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\m\i\mint-leaves.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\m\i\mirchi.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\m\o\mosambi_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\m\u\mushrooms.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\o\n\onion.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\o\r\orangejunction.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\p\a\papaya.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\p\a\parsley_2.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\p\a\parwal.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\p\a\pawata.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\p\e\pealed-garlic.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\p\e\pear.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\p\i\pinapple.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\p\o\potatoes.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\r\a\raw-papaya-opt.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\r\a\raw_banna.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\r\e\red-pumpkin_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\r\e\red_apples-551.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\r\e\red_bell_pepper.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\r\e\red_grape.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\s\h\shepu_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\s\m\small-brinjal.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\s\p\spinach.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\s\p\spring-onion.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\s\u\suran.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\s\w\sweet_potato.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\t\a\taro.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\t\o\tomato1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\t\o\tomato_1.png" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\t\u\turai.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\t\u\turai_big.png" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\v\g\vg-000002019.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\w\a\washington_apple.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\w\h\white-pumpkin.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\w\h\whiteonions.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\y\e\yellow_bell_pepper.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\120x120\9df78eab33525d08d6e5fb8d27136e95\z\u\zucchini.png" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\0\8\080307081409-large.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\2\0\20080204233721_pear.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\2\0\20100801peach.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\2\5\25021.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\a\s\asparagus.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\a\v\avocado.png" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\a\w\awala.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\b\a\baby_corn.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\b\a\baby_potato.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\b\a\bananai.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\b\a\basil.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\b\e\beetroot-300x225-wa-scene.gif" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\b\i\bittergourd.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\b\o\bootlegourd.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\b\r\brinjal-long-green-1-kg.jpg.png" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\b\r\broccoli_0_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\c\a\cabbage.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\c\a\cantaloupe.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\c\a\carrat.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\c\a\cauliflower1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\c\e\celery.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\c\h\chawali_long_beans.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\c\h\chikoo-600x600.png" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\c\o\coconuts11.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\c\o\coriander.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\c\o\corn.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\c\u\cucumber_2.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\c\u\curry_patta.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\d\r\drum_stick.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\f\r\french-beans.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\g\a\garlic1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\g\a\gawar_2.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\g\i\ginger_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\g\r\green-pumpkin.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\g\r\greentomatocopyrightedimage1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\g\r\green_coconut.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\g\r\green_cucumber.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\g\u\guava01.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\k\a\kamal-kakdi.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\l\a\lady_finger_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\l\a\lal_math.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\l\e\lemon.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\l\e\lemongrass.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\l\e\lettuce.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\l\o\long-brinjal.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\m\a\madras-cucumber.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\m\e\methi_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\m\i\mint-leaves.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\m\i\mirchi.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\m\o\mosambi_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\m\u\mushrooms.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\o\n\onion.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\o\r\orangejunction.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\p\a\papaya.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\p\a\parsley_2.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\p\a\parwal.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\p\a\pawata.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\p\e\pear.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\p\i\pinapple.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\p\o\pomegranate.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\p\o\potatoes.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\r\a\raw-papaya-opt.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\r\a\raw_banna.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\r\e\red-pumpkin_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\r\e\red_apples-551.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\r\e\red_bell_pepper.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\r\e\red_grape.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\s\h\shepu_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\s\i\sitafhal.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\s\m\small-brinjal.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\s\p\spinach.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\s\p\spring-onion.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\s\t\strawberry.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\s\u\suran.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\s\w\sweet_potato.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\t\a\taro.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\t\o\tomato1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\t\o\tomato_1.png" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\t\o\tondli_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\t\u\turai.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\t\u\turai_big.png" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\v\g\vg-000002019.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\w\a\watermelon.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\w\h\white-pumpkin.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\w\h\whiteonions.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\w\h\white_radish.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\y\e\yellow_bell_pepper.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\370x\170ec19af00183b5e0368529fc2daa2f\z\u\zucchini.png" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\0\8\080307081409-large.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\2\0\20100801peach.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\2\5\25021.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\a\v\avocado.png" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\b\a\baby_potato.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\b\a\banana-flower.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\b\a\bananai.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\b\a\basil.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\b\e\beetroot-300x225-wa-scene.gif" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\c\a\cantaloupe.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\c\e\celery.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\c\h\chikoo-600x600.png" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\c\o\coconuts11.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\c\o\coriander.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\c\o\corn.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\c\u\curry_patta.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\d\r\drum_stick.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\f\i\fig.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\g\a\garlic1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\g\r\grapes_indian.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\g\r\green-pumpkin.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\g\r\greentomatocopyrightedimage1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\g\r\green_coconut.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\g\r\green_cucumber.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\k\a\kamal-kakdi.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\k\i\kiwi-fruit.png" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\l\a\lal_math.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\l\e\lemon.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\l\e\lemongrass.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\l\e\lettuce.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\m\a\madras-cucumber.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\m\e\methi_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\m\i\mint-leaves.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\m\o\mosambi_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\o\n\onion.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\p\a\papaya.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\p\a\parwal.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\p\e\pealed-garlic.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\p\i\pinapple.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\r\e\red_bell_pepper.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\s\h\shepu_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\s\p\spinach.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\s\p\spring-onion.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\s\t\strawberry.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\s\u\suran.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\s\w\sweet_potato.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\t\o\tomato_1.png" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\w\a\watermelon.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\w\h\white-pumpkin.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\w\h\whiteonions.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\w\h\white_radish.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\y\e\yellow_bell_pepper.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\72x72\9df78eab33525d08d6e5fb8d27136e95\z\u\zucchini.png" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\2\0\20080204233721_pear.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\2\0\20100801peach.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\a\s\asparagus.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\a\v\avocado.png" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\a\w\awala.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\b\a\baby_corn.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\b\a\baby_potato.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\b\a\banana-flower.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\b\a\basil.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\b\e\beetroot-300x225-wa-scene.gif" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\b\i\bittergourd.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\b\o\bootlegourd.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\c\a\cabbage.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\c\a\cantaloupe.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\c\a\carrotred1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\c\a\cauliflower1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\c\e\celery.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\c\h\chawali_long_beans.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\c\o\coconuts11.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\c\o\coriander.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\c\o\corn.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\c\u\cucumber_2.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\c\u\curry_patta.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\f\i\fig.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\f\r\french-beans.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\g\a\garlic1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\g\a\gawar_2.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\g\i\ginger_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\g\r\grapes_indian.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\g\r\green-pumpkin.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\g\r\greenpeas_225x318.ashx.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\g\r\greentomatocopyrightedimage1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\g\r\green_coconut.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\g\r\green_cucumber.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\g\u\guava01.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\k\a\kamal-kakdi.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\k\i\kiwi-fruit.png" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\l\a\lady_finger_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\l\e\lemongrass.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\l\e\lettuce.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\l\o\long-brinjal.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\m\a\madras-cucumber.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\m\e\methi_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\m\i\mint-leaves.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\m\i\mirchi.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\m\o\mosambi_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\m\u\mushrooms.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\o\n\onion.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\o\r\orangejunction.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\p\a\papaya.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\p\a\parsley_2.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\p\a\parwal.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\p\a\pawata.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\p\e\pealed-garlic.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\p\e\pear.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\p\i\pinapple.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\p\o\potatoes.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\r\a\raw-papaya-opt.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\r\a\raw_banna.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\r\e\red-pumpkin_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\r\e\red_apples-551.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\r\e\red_bell_pepper.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\r\e\red_grape.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\s\h\shepu_1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\s\m\small-brinjal.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\s\p\spinach.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\s\p\spring-onion.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\s\u\suran.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\s\w\sweet_potato.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\t\a\taro.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\t\o\tomato1.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\t\o\tomato_1.png" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\t\u\turai.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\t\u\turai_big.png" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\v\g\vg-000002019.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\w\a\washington_apple.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\w\h\white-pumpkin.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\w\h\whiteonions.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\y\e\yellow_bell_pepper.jpg" />
+    <Content Include="media\catalog\product\cache\1\thumbnail\9df78eab33525d08d6e5fb8d27136e95\z\u\zucchini.png" />
+    <Content Include="media\catalog\product\resized\200x200\4ae8e06d6f3ccedac702cb6850b24e51\bananai.jpg" />
+    <Content Include="media\catalog\product\resized\200x200\4ae8e06d6f3ccedac702cb6850b24e51\carrotred1.jpg" />
+    <Content Include="media\catalog\product\resized\200x200\4ae8e06d6f3ccedac702cb6850b24e51\curry_patta.jpg" />
+    <Content Include="media\catalog\product\resized\200x200\4ae8e06d6f3ccedac702cb6850b24e51\grapes_indian.jpg" />
+    <Content Include="media\catalog\product\resized\200x200\4ae8e06d6f3ccedac702cb6850b24e51\green_coconut.jpg" />
+    <Content Include="media\catalog\product\resized\200x200\4ae8e06d6f3ccedac702cb6850b24e51\lal_math.jpg" />
+    <Content Include="media\catalog\product\resized\200x200\4ae8e06d6f3ccedac702cb6850b24e51\mint-leaves.jpg" />
+    <Content Include="media\catalog\product\resized\200x200\4ae8e06d6f3ccedac702cb6850b24e51\mirchi.jpg" />
+    <Content Include="media\catalog\product\resized\200x200\4ae8e06d6f3ccedac702cb6850b24e51\mosambi_1.jpg" />
+    <Content Include="media\catalog\product\resized\200x200\4ae8e06d6f3ccedac702cb6850b24e51\parwal.jpg" />
+    <Content Include="media\catalog\product\resized\200x200\4ae8e06d6f3ccedac702cb6850b24e51\pawata.jpg" />
+    <Content Include="media\catalog\product\resized\200x200\4ae8e06d6f3ccedac702cb6850b24e51\pinapple.jpg" />
+    <Content Include="media\catalog\product\resized\200x200\4ae8e06d6f3ccedac702cb6850b24e51\potatoes.jpg" />
+    <Content Include="media\catalog\product\resized\200x200\4ae8e06d6f3ccedac702cb6850b24e51\red_apples-551.jpg" />
+    <Content Include="media\catalog\product\resized\200x200\4ae8e06d6f3ccedac702cb6850b24e51\shepu_1.jpg" />
+    <Content Include="media\catalog\product\resized\200x200\4ae8e06d6f3ccedac702cb6850b24e51\spinach.jpg" />
+    <Content Include="media\catalog\product\resized\200x200\4ae8e06d6f3ccedac702cb6850b24e51\tomato1.jpg" />
+    <Content Include="media\catalog\product\resized\200x200\4ae8e06d6f3ccedac702cb6850b24e51\tomato_1.png" />
+    <Content Include="media\catalog\product\resized\200x200\4ae8e06d6f3ccedac702cb6850b24e51\tondli_1.jpg" />
+    <Content Include="media\catalog\product\resized\200x200\4ae8e06d6f3ccedac702cb6850b24e51\turai.jpg" />
+    <Content Include="media\catalog\product\resized\200x200\4ae8e06d6f3ccedac702cb6850b24e51\white-pumpkin.jpg" />
+    <Content Include="media\catalog\product\resized\200x200\4ae8e06d6f3ccedac702cb6850b24e51\zucchini.png" />
+    <Content Include="media\css\40fa22cfb419299fbd8162816f8de9a4.css" />
+    <Content Include="media\css\8b77512cfb98d9d7b6aeac8f174d9131.css" />
+    <Content Include="media\css\style.css" />
+    <Content Include="media\favicon\default\favicon.ico" />
+    <Content Include="media\js\19092366e6b1c4473bcf8f777e85c407.js" />
+    <Content Include="media\js\3da1e7ad4d4e3dc631ed7ca8c1000c85.js" />
+    <Content Include="media\js\4eef62d1ebc59917ea4b08aad3bbc0f4.js" />
+    <Content Include="media\js\892d7e01d13e8a4cf90c48f34cc6dbb0.js" />
+    <Content Include="media\wysiwyg\500.jpg" />
+    <Content Include="media\wysiwyg\cashondelivery.jpg" />
+    <Content Include="media\wysiwyg\get-5-percent-off.jpg" />
+    <Content Include="media\wysiwyg\same-day-delivery.jpg" />
+    <Content Include="media\wysiwyg\slideshow\home-default\onlinesabjiwala-home-banner-2.jpg" />
+    <Content Include="media\wysiwyg\slideshow\home-default\onlinesabjiwala-home-banner-3.jpg" />
+    <Content Include="media\wysiwyg\we-pick.jpg" />
+    <Content Include="packages.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Account\Web.config" />
+    <Content Include="media\catalog\product\cache\1\image\9df78eab33525d08d6e5fb8d27136e95\0\8\080307081409-large.5f5.delayed" />
+    <Content Include="Apps\Admin\AdminMaster.Master" />
+    <Content Include="Apps\Admin\Handlers\GetUserListHandler.ashx" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="Apps\Admin\Handlers\GetProductListHandler.ashx" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\custom\basic.js" />
+    <Content Include="Scripts\custom\cart.js" />
+    <Content Include="Scripts\custom\homepageproducts.js" />
+    <Content Include="Scripts\custom\listfruits.js" />
+    <Content Include="Scripts\custom\listmostsold.js" />
+    <Content Include="Scripts\custom\listveg.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery.noty.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\owl.carousel.min.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Site.Master" />
+    <Content Include="skin\frontend\base\default\images\AppleAnimated.gif" />
+    <Content Include="skin\frontend\base\default\images\BananaAnimated.gif" />
+    <Content Include="skin\frontend\base\default\images\reload.png" />
+    <Content Include="skin\frontend\base\default\images\TomatoAnimated.gif" />
+    <Content Include="skin\frontend\default\onlinesabjiwala.html" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\css\fonts\glyphicons-halflings-regular-2.html" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\css\fonts\glyphicons-halflings-regular-3.html" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\css\fonts\glyphicons-halflings-regular-4.html" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\css\fonts\glyphicons-halflings-regular.html" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\css\fonts\glyphicons-halflings-regulard41d.html" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\css\font\fontawesome-webfont.svg" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\css\images\border.html" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\css\images\controls.html" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\css\images\loading.html" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\css\images\widgets\i_block-list.html" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\css\images\widgets\i_widget-link.html" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\css\images\widgets\i_widget-new.html" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\css\img\bs-docs-masthead-pattern.html" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\css\img\glyphicons-halflings-white.html" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\css\path\fancybox_loading%402x.html" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\css\path\fancybox_sprite%402x.html" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\css\path\fancy_title_over.html" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\css\theme-red.css" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\add_contact.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\bf-title.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\bg-fillter-price.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\bg-selectbox.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\bg-title-about.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\bg_x.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\bkg_rating.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\border-bottom-bs.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\border-left-cart.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\btn-cart-bs.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\btn-cart.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\btn-close-fancy.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\btn-close-login.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\btn-compare.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\btn-menu-mobile.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\btn-next-hp.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\btn-next-owl.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\btn-prev-hp.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\btn-prev-owl.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\btn-quickview.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\btn-wishlist.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\check-shopby.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\cl_facebook.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\cl_flickr.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\cl_twitter.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\colors.html" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\cpanel\bg-cpanel-head.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\deal-icon.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\down-icon.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\email_contact.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\fancybox\fancybox-x.html" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\fancybox\fancybox-y.html" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\fancybox\fancybox.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\fancybox_buttons.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\fancybox_loading.gif" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\fancybox_overlay.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\hot-line-icon.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\icon-btn-login.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\icon-cart-header-3.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\icon-cart.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\icon-login-popup.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\icon-newletter-footer.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\icon-pass.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\icon-username.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\icon-ver-menu.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\icon-whylist.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\icon-zoom.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\loading-qv.gif" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\new-label-product.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\note-client.html" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\pattern\pattern1.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\pattern\pattern2.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\pattern\pattern3.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\pattern\pattern4.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\pattern\pattern5.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\pattern\pattern6.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\pattern\pattern7.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\pattern\pattern8.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\phone_contact.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\red\grid-btn.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\red\listing-btn.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\red\logo-footer.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\red\onlinesabjiwalalogo.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\remove_btn.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\sale-label-product.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\search-pro-dropdown.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\select-btn-detail.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\share-button.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\show-c.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\trigger.html" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\up-arrow.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\images\up-icon.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\sm\cartpro\images\ajax-loader-tr.gif" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\sm\cartpro\images\btn-minus.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\sm\cartpro\images\btn-plus.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\sm\cartpro\images\fancybox-x.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\sm\cartpro\images\fancybox-y.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\sm\cartpro\images\fancybox.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\sm\cartpro\images\i_block-cart.html" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\sm\cartpro\images\minicart-del.png" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\sm\cartpro\images\minicart-edit.png" />
+    <Content Include="skin\jquery.noty.css" />
+    <Content Include="skin\noty_theme_default.css" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Bundle.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Site.Mobile.Master" />
+    <Content Include="MasterSabji.Master" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\css\font\fontawesome-webfontd41d.eot" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\css\font\fontawesome-webfontf77b.eot" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\css\font\fontawesome-webfontf77b.ttf" />
+    <Content Include="skin\frontend\onlinesabjiwala\default\css\font\fontawesome-webfontf77b.woff" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\AddPhoneNumber.aspx.cs">
+      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\AddPhoneNumber.aspx.designer.cs">
+      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Confirm.aspx.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Confirm.aspx.designer.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Forgot.aspx.cs">
+      <DependentUpon>Forgot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Forgot.aspx.designer.cs">
+      <DependentUpon>Forgot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Lockout.aspx.cs">
+      <DependentUpon>Lockout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Lockout.aspx.designer.cs">
+      <DependentUpon>Lockout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.designer.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ManageLogins.aspx.cs">
+      <DependentUpon>ManageLogins.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ManageLogins.aspx.designer.cs">
+      <DependentUpon>ManageLogins.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ManagePassword.aspx.cs">
+      <DependentUpon>ManagePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ManagePassword.aspx.designer.cs">
+      <DependentUpon>ManagePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Admin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Admin\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\User\MyOrders.aspx.cs">
+      <DependentUpon>MyOrders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\User\MyOrders.aspx.designer.cs">
+      <DependentUpon>MyOrders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ResetPasswordConfirmation.aspx.cs">
+      <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ResetPasswordConfirmation.aspx.designer.cs">
+      <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.cs">
+      <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.designer.cs">
+      <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\VerifyEmailAddress.aspx.cs">
+      <DependentUpon>VerifyEmailAddress.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\VerifyEmailAddress.aspx.designer.cs">
+      <DependentUpon>VerifyEmailAddress.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Admin\AdminMaster.Master.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Admin\AdminMaster.Master.designer.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Admin\Handlers\GetProductListHandler.ashx.cs">
+      <DependentUpon>GetProductListHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Admin\Handlers\GetUserListHandler.ashx.cs">
+      <DependentUpon>GetUserListHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Admin\ManageMasterCategory.aspx.cs">
+      <DependentUpon>ManageMasterCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Admin\ManageMasterCategory.aspx.designer.cs">
+      <DependentUpon>ManageMasterCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Admin\ManageProductImages.aspx.cs">
+      <DependentUpon>ManageProductImages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Admin\ManageProductImages.aspx.designer.cs">
+      <DependentUpon>ManageProductImages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Admin\ManageProductList.aspx.cs">
+      <DependentUpon>ManageProductList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Admin\ManageProductList.aspx.designer.cs">
+      <DependentUpon>ManageProductList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Admin\ManageProducts.aspx.cs">
+      <DependentUpon>ManageProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Admin\ManageProducts.aspx.designer.cs">
+      <DependentUpon>ManageProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Admin\ManageSubCategory.aspx.cs">
+      <DependentUpon>ManageSubCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Admin\ManageSubCategory.aspx.designer.cs">
+      <DependentUpon>ManageSubCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Admin\ManageTransaction.aspx.cs">
+      <DependentUpon>ManageTransaction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Admin\ManageTransaction.aspx.designer.cs">
+      <DependentUpon>ManageTransaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Admin\ManageUser.aspx.cs">
+      <DependentUpon>ManageUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Admin\ManageUser.aspx.designer.cs">
+      <DependentUpon>ManageUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\User\AddAddress.aspx.cs">
+      <DependentUpon>AddAddress.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\User\AddAddress.aspx.designer.cs">
+      <DependentUpon>AddAddress.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\User\AddressBookList.aspx.cs">
+      <DependentUpon>AddressBookList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\User\AddressBookList.aspx.designer.cs">
+      <DependentUpon>AddressBookList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\User\ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\User\ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="checkout.aspx.cs">
+      <DependentUpon>checkout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="checkout.aspx.designer.cs">
+      <DependentUpon>checkout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\CartRepository.cs" />
+    <Compile Include="Controllers\ProductDetailsController.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Details.aspx.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Details.aspx.designer.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products.aspx.cs">
+      <DependentUpon>products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products.aspx.designer.cs">
+      <DependentUpon>products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="indexchild.aspx.cs">
+      <DependentUpon>indexchild.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="indexchild.aspx.designer.cs">
+      <DependentUpon>indexchild.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MasterSabji.Master.cs">
+      <DependentUpon>MasterSabji.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterSabji.Master.designer.cs">
+      <DependentUpon>MasterSabji.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\MainCategoryMasterSub.cs" />
+    <Compile Include="ViewModels\SubCategoryMasterSub.cs" />
+    <Compile Include="ViewModels\vmCartDetail.cs" />
+    <Compile Include="ViewModels\vmPrdListDependency.cs" />
+    <Compile Include="ViewModels\vmProductDetails.cs" />
+    <Compile Include="ViewModels\vmProductDetailsSummary.cs" />
+    <Compile Include="ViewModels\vmProductDetailsWithSummary.cs" />
+    <Compile Include="ViewModels\vmProductListMainSubCategories.cs" />
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="ProductData\" />
+    <Folder Include="ZipFiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Unique.EcommGroceryStore.Core\Unique.EcommGroceryStore.Core.csproj">
+      <Project>{0713170f-3384-46e6-91b7-204083cd4419}</Project>
+      <Name>Unique.EcommGroceryStore.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Unique.EcommGroceryStore.DAL\Unique.EcommGroceryStore.DAL.csproj">
+      <Project>{41a60988-5680-4dfb-91bd-43acffa3271f}</Project>
+      <Name>Unique.EcommGroceryStore.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59492</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:59492/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

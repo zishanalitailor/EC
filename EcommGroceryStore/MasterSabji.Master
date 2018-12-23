@@ -1,0 +1,635 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterSabji.Master.cs" Inherits="EcommGroceryStore.MasterSabji" %>
+
+<!DOCTYPE html>
+<html xml:lang="en" lang="en">
+
+<!-- Mirrored from www.onlinesabjiwala.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 May 2016 11:11:28 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<!-- /Added by HTTrack -->
+<head>
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Buy Fresh</title>
+    <meta name="description" content="Buy Fresh is prefered destination for buying grocery, fresh fruits &amp; vegetables online in India, offering fresh and best prices and a completely hassle-free experience with options of paying through Cash on Delivery &amp; free home delivery." />
+    <meta name="keywords" content="vegetables online Mumbai, online grocery shopping, online grocery shopping mumbai, online grocery, online grocery shopping india, buy grocery online, online food shopping, online supermarket, buy food online, grocery online, groceries online, buy groceries online, online sabjiwala, onlinesabjiwala.com, online, shopping, cut vegetables, cut vegetables online, free delivery, vegetables, veggies, fruits, buy vegetables online, buy Fruits online, buy fresh fruits online, buy fresh vegetables online, buy fresh vegetables online in Mumbai, buy vegetables online in Mumbai, buy fruits online in Mumbai, best online sabjiwala in Mumbai, buy fresh fruits and vegetables online, buy fresh fruits and vegetables online in Mumbai, buy green vegetables online in Mumbai, price of vegetable in Mumbai, buy fresh vegetables online in india, online vegetable shopping Mumbai, vegetable shopping online Mumbai, Free Delivery, free vegetable delivery, free fruits delivery, vegetables online in Mumbai best prices, online vegetables in navi Mumbai, buy fresh vegetables navi Mumbai, vegetables online navi Mumbai, online vegetables in thane, Exotic Vegetables, Exotic Vegetables Mumbai, Exotic Vegetables india, grocery shopping mumbai, vegetables home delivery Mumbai, order vegetables online Mumbai,veggies and fruits in Mumbai, discount vegetables fruits, vegetable deals, organic vegetables online Mumbai,navi mumbai, pune, ahmedabad, nagpur, nashik, bangalore, noida, delhi, lucknow, varanasi, allahabad, indore, chennai, hyderabad, kolkata, Chandigarh, Jaipur, Coimbatore, India, supermarket, hypermarket, online sabjiwala, sabjiwala, onlinesabjiwala, Free, faster home delivery, vegetable, deals, offers, discount, best, shop, cash on delivery, best quality, website, low price, store" />
+    <meta name="robots" content="INDEX,FOLLOW" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="icon" href="/../media/favicon/default/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/../media/favicon/default/favicon.ico" type="image/x-icon" />
+    <!--group: nogroup-->
+    <script type="text/javascript" src="/../Scripts/jquery-1.10.2.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/../media/css/8b77512cfb98d9d7b6aeac8f174d9131.css" media="all" />
+    <script type="text/javascript" src="http://botmonster.com/jquery-bootpag/jquery.bootpag.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/../skin/jquery.noty.css" />
+    <link rel="stylesheet" type="text/css" href="/../skin/noty_theme_default.css" />
+    <%--<script type="text/javascript" src="/../media/js/3da1e7ad4d4e3dc631ed7ca8c1000c85.js"></script>
+    <script type="text/javascript" src="/../media/js/4eef62d1ebc59917ea4b08aad3bbc0f4.js"></script>--%>
+
+    <script type="text/javascript" src="/../Scripts/jquery.noty.js"></script>
+    <link rel="stylesheet" href="/../skin/frontend/onlinesabjiwala/default/css/theme-red.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Anton" media="all" />
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script type="text/javascript" src="http://l2.io/ip.js?var=myip"></script>
+    <link href="/../media/css/style.css" rel="stylesheet" />
+    <script src="/../Scripts/owl.carousel.min.js"></script>
+    <style type="text/css">
+        body {
+            font-size: 12px;
+        }
+
+        body {
+            font-family: Georgia;
+        }
+
+            body.onlinesabjiwala {
+                color: #686868;
+            }
+
+            body.onlinesabjiwala {
+                background-color: #FFFFFF;
+            }
+
+        a,
+        .store-info .list-info .item-info .info-content > h2 {
+            color: #444444;
+        }
+
+            a:hover,
+            .no-rating a:hover {
+                color: #EA3A3C;
+            }
+
+        #yt_wrapper .page-title:before {
+            background-color: #686868;
+        }
+
+        .cloud-zoom-big {
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        .item-compare,
+        .product-compare,
+        .add-to-links .compare {
+            display: none;
+        }
+
+        #pageloaddiv {
+            opacity: 0.2;
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+            background: url('/../skin/frontend/base/default/images/loader-responsive.gif') no-repeat center center;
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body id="bd" class="cmspage1 onlinesabjiwala    cms-index-index cms-home">
+    <div id="pageloaddiv"></div>
+    <input type="hidden" id="ip" value="" />
+    <input type="hidden" id="cartid" value="" />
+    <form runat="server">
+        <div id="options">
+            <div id="options-tab" style="top: 0px;">
+                <!--block content-->
+                <div id="zoptions">
+                    <div id="process" style="display: block;"></div>
+                    <div id="fancybox-wrap-clone" style="display: none;">
+                        <div id="fancybox-outer">
+                            <div id="fancy-bg-n" class="fancy-bg"></div>
+                            <div id="fancy-bg-ne" class="fancy-bg"></div>
+                            <div id="fancy-bg-e" class="fancy-bg"></div>
+                            <div id="fancy-bg-se" class="fancy-bg"></div>
+                            <div id="fancy-bg-s" class="fancy-bg"></div>
+                            <div id="fancy-bg-sw" class="fancy-bg"></div>
+                            <div id="fancy-bg-w" class="fancy-bg"></div>
+                            <div id="fancy-bg-nw" class="fancy-bg"></div>
+                            <div id="confirmbox"></div>
+                            <a id="fancybox-close" style="display: inline;" onclick="$('confirmbox').innerHTML='';$('fancybox-wrap-clone').setStyle({display:'none'});$('options').setStyle({display:'none'});"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="blurmask"></div>
+        <div id="yt_wrapper">
+
+            <!-- BEGIN: Header -->
+            <div id="yt_header" class="yt-header wrap">
+
+                <div class="header-default header-v2">
+                    <div class="yt-header-top">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-5 sl-header-text">
+                                    <div class="label-offer-slider hidden">Just for You</div>
+                                    <div class="offer-wrapper hidden">
+                                        <div class="offer-header">
+                                            <ul id="offer-slider" class="owl-carousel owl-theme" style="opacity: 1; display: block;">
+                                                <div class="owl-wrapper-outer">
+                                                    <div class="owl-wrapper" style="width: 2862px; left: 0px; display: block; transition: all 400ms ease; transform: translate3d(-477px, 0px, 0px);">
+                                                        <div class="owl-item" style="width: 477px;">
+                                                            <li class="item"><a title="Offer" href="#">Get free delivery on all orders above ₹ 399. </a></li>
+                                                        </div>
+                                                        <div class="owl-item" style="width: 477px;">
+                                                            <li class="item"><a title="Offer" href="#">Get 5% discount on all orders above ₹ 500. Use Code: ONLINESABJIWALA</a></li>
+                                                        </div>
+                                                        <div class="owl-item" style="width: 477px;">
+                                                            <li class="item"><a title="Offer" href="#">Get ₹ 100 Off on all orders of ₹ 1000 or more. Use code: OSBIG10</a></li>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-7 top-links-action">
+                                    <div class="block-action-header top-link-account checkout-link">
+                                        <ul class="links">
+                                            <li class="first last">
+                                                <asp:LinkButton ID="LinkButton1" OnClick="btnCheckOut_Click" class="top-link-checkout" runat="server">Checkout</asp:LinkButton>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="block-action-header top-link-account login-link">
+                                        <ul>
+                                            <li>
+                                                <% if (HttpContext.Current.User.Identity.IsAuthenticated)
+                                                    {%>
+                                                <asp:LinkButton class="logout-btn" Text="Log Out" ID="lnkLogOut" OnClick="lnkLogOut_Click" runat="server" />
+                                                <% }
+                                                    else
+                                                    {%>
+                                                <a class="login-btn" data-toggle="modal" href="Account/Login.aspx" title="Login">Login</a>
+                                                <% } %>                                                
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="action-mobile">
+                                        <% if (HttpContext.Current.User.Identity.IsAuthenticated)
+                                            {%>
+                                        <div class="block-action-header top-link-account my-account-link account-mobile-btn">
+                                            <ul>
+                                                <li>
+                                                    <a title="My Account" href="customer/account/index.html">&nbsp;</a>
+                                                </li>
+                                            </ul>
+                                            <div class="dropdown-mobile">
+                                                <ul class="links">
+                                                    <li class="first last"><a href="checkout/index.html" title="Checkout" class="top-link-checkout">Checkout</a></li>
+                                                </ul>
+                                                <ul class="dropdown-link-account">
+                                                    <li><a title="My Orders" href="sales/order/history/index.html">My Orders</a></li>
+                                                    <li><a title="Account Information" href="customer/account/edit/index.html">Account Information</a></li>
+                                                    <li><a title="Address Book" href="customer/address/index.html">Address Book</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <% } %>
+                                        <div class="block-action-header top-link-account login-link login-mobile-btn">
+                                            <ul>
+                                                <li>
+                                                    <% if (HttpContext.Current.User.Identity.IsAuthenticated)
+                                                        {%>
+                                                    <asp:LinkButton class="logout-btn" OnClick="lnkLogOut_Click" runat="server" />
+                                                    <% }
+                                                        else
+                                                        {%>
+                                                    <a class="login-btn" href="/Account/Login.aspx" title="Login">&nbsp;</a>
+                                                    <% } %>    
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+
+                                    <% if (HttpContext.Current.User.Identity.IsAuthenticated)
+                                        {%>
+                                    <div class="block-action-header top-link-account my-account-link">
+                                        <ul>
+                                            <li>
+                                                <a class="account-toplink dropdown-ict" title="My Account" href="customer/account/index.html">My Account</a>
+                                                <ul class="dropdown-link-account">
+                                                    <li><a title="My Orders" href="/Apps/User/MyOrders.aspx">My Orders</a></li>
+                                                    <li><a title="Account Information" href="customer/account/edit/index.html">Account Information</a></li>
+                                                    <li><a title="Address Book" href="customer/address/index.html">Address Book</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <% } %>
+
+                                    <% if (HttpContext.Current.User.Identity.IsAuthenticated && HttpContext.Current.User.IsInRole("Admin"))
+                                        {%>
+                                    <div class="block-action-header top-link-account login-link">
+                                        <ul>
+                                            <li>
+                                                <asp:HyperLink Text="Administration" NavigateUrl="~/Apps/Admin/Default.aspx" runat="server" />
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <%} %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="yt-header-middle">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-4 logo-wrapper">
+                                    <h1>
+                                        <a title="Onlinesabjiwala.com" href="/indexchild.aspx">
+                                            <img src="/../skin/frontend/onlinesabjiwala/default/images/red/onlinesabjiwalalogo.png" alt="Onlinesabjiwala.com">
+                                        </a>
+                                    </h1>
+                                </div>
+
+                                <div class="col-lg-6 col-md-5 col-sm-4 search-pro">
+                                    <div id="sm_serachbox_pro15439196551463397099" class="sm-serachbox-pro hidden">
+
+                                        <div class="sm-searbox-content">
+
+                                            <div class="form-search">
+                                                <div class="cat-wrapper">
+                                                    <div class="selector" id="uniform-cat" style="width: 134px;">
+                                                        <span style="width: 124px; -webkit-user-select: none;">All Categories</span><select id="cat" name="cat" class="jqtransformdone">
+                                                            <option value="">All Categories</option>
+                                                            <option value="29">- Fruits &amp; Vegetables</option>
+                                                            <option value="8">- - Fruits</option>
+                                                            <option value="22">- - - Seasonal Fruits</option>
+                                                            <option value="23">- - - Imported Fruits</option>
+                                                            <option value="30">- - Vegetables</option>
+                                                            <option value="31">- - - Seasonal Vegetables</option>
+                                                            <option value="32">- - - Green Leafy Vegetables </option>
+                                                            <option value="33">- - - Exotic Vegetables</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="input-search">
+                                                    <input size="30" id="search" type="text" name="q" class="input-text" onfocus="if(this.value=='Search Fresh Fruits &amp; Vegetables...') this.value='';" onblur="if(this.value=='') this.value='Search Fresh Fruits &amp; Vegetables...';" value="Search Fresh Fruits &amp; Vegetables...">
+                                                </div>
+                                                <button type="submit" title="Search" class="icon-search button-search-pro form-button"></button>
+                                                <div id="search_autocomplete" class="search-autocomplete"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="col-lg-2 col-md-3 col-sm-4 hot-line">
+                                    <div class="hot-lilne-wrapper">
+                                        <h2>Need Help Call Us</h2>
+                                        <a title="Call: +91-808-227-6000" href="tel:+918082276000">+91-808-227-6000</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="yt-header-under">
+                        <div class="container">
+                            <div class="row yt-header-under-wrap">
+                                <div class="yt-main-menu col-md-12">
+                                    <div id="yt-responsivemenu" class="yt-responsivemenu">
+                                        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"></button>
+                                        <div id="yt_resmenu_collapse" style="height: 0;" class="nav-collapse collapse">
+                                            <ul class="nav-menu clearfix">
+                                                <li class="nav-home">
+                                                    <a class="nav-home" href="index.html" title="Home"><span>Home</span></a>
+                                                </li>
+                                                <li class="level0 nav-1 parent" onmouseover="toggleMenu(this,1)" onmouseout="toggleMenu(this,0)">
+                                                    <a href="fruits-vegetables.html">
+                                                        <span>Fruits &amp; Vegetables</span>
+                                                    </a>
+                                                    <div class="res-wrapnav">
+                                                        <ul class="level0">
+                                                            <li class="level1 nav-1-1 first">
+                                                                <a href="products.aspx/fruits">
+                                                                    <span>Fruits</span>
+                                                                </a>
+                                                            </li>
+                                                            <li class="level1 nav-1-2 last parent" onmouseover="toggleMenu(this,1)" onmouseout="toggleMenu(this,0)">
+                                                                <a href="products.aspx/vegetables">
+                                                                    <span>Vegetables</span>
+                                                                </a>
+                                                                <ul class="level1 hidden">
+                                                                    <li class="level2 nav-1-2-1 first">
+                                                                        <a href="fruits-vegetables/vegetables/seasonal-vegetables.html">
+                                                                            <span>Seasonal Vegetables</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="level2 nav-1-2-2">
+                                                                        <a href="fruits-vegetables/vegetables/green-leafy-vegetables.html">
+                                                                            <span>Green Leafy Vegetables </span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="level2 nav-1-2-3 last">
+                                                                        <a href="fruits-vegetables/vegetables/exotic-vegetables.html">
+                                                                            <span>Exotic Vegetables</span>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <span class="menuress-toggle" style="height: 17px;"></span></li>
+                                            </ul>
+
+                                        </div>
+                                        <a class="btn-search-mobile icon-search" href="javascript:void(0)" title="Search"></a>
+                                    </div>
+                                    <div class="yt-menu">
+
+                                        <!--<link media="all" href="" type="text/css" rel="stylesheet">-->
+
+                                        <!--<link media="all" href="" type="text/css" rel="stylesheet">-->
+
+                                        <div class="css_effect sm_megamenu_wrapper_horizontal_menu sambar" id="sm_megamenu_menu572ac9f87dbc9" data-sam="7163002341462422008">
+                                            <div class="sambar-inner">
+                                                <a class="btn-sambar" data-sapi="collapse" href="#sm_megamenu_menu572ac9f87dbc9">
+                                                    <span class="icon-bar"></span>
+                                                    <span class="icon-bar"></span>
+                                                    <span class="icon-bar"></span>
+                                                </a>
+                                                <ul class="sm-megamenu-hover sm_megamenu_menu sm_megamenu_menu_black" data-jsapi="on">
+                                                    <li class="rw-url home-item-parent other-toggle sm_megamenu_lv1 sm_megamenu_nodrop   ">
+                                                        <a class="sm_megamenu_head sm_megamenu_nodrop " href="/indexchild.aspx" id="sm_megamenu_3">
+                                                            <span class="sm_megamenu_icon sm_megamenu_nodesc">
+                                                                <span class="sm_megamenu_title">Home</span>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="other-toggle sm_megamenu_lv1 sm_megamenu_nodrop   ">
+                                                        <a class="sm_megamenu_head sm_megamenu_nodrop " href="/products.aspx/fruits" id="sm_megamenu_5">
+                                                            <span class="sm_megamenu_icon sm_megamenu_nodesc">
+                                                                <span class="sm_megamenu_title">Fruits</span>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="electronic-item-parent other-toggle   sm_megamenu_lv1 sm_megamenu_drop parent   ">
+                                                        <a class="sm_megamenu_head sm_megamenu_drop " href="/products.aspx/vegetables" id="sm_megamenu_6">
+                                                            <span class="sm_megamenu_icon sm_megamenu_nodesc">
+                                                                <span class="sm_megamenu_title">Vegetables</span>
+                                                            </span>
+                                                        </a>
+                                                        <div class="sm-megamenu-child sm_megamenu_dropdown_3columns hidden">
+                                                            <div class="sm_megamenu_col_3 sm_megamenu_firstcolumn  sm_megamenu_id6   electronic-item">
+                                                                <div class="sm_megamenu_col_2 sm_megamenu_firstcolumn  sm_megamenu_id7   ">
+                                                                    <div class="sm_megamenu_head_item ">
+                                                                        <div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="fruits-vegetables/vegetables/green-leafy-vegetables.html"><span class="sm_megamenu_title_lv2">Leafy Vegetables</span></a></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="sm_megamenu_col_2 sm_megamenu_firstcolumn  sm_megamenu_id8   ">
+                                                                    <div class="sm_megamenu_head_item ">
+                                                                        <div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="fruits-vegetables/vegetables/exotic-vegetables.html"><span class="sm_megamenu_title_lv2">Exotic Vegetables</span></a></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="sm_megamenu_col_2 sm_megamenu_firstcolumn  sm_megamenu_id9   ">
+                                                                    <div class="sm_megamenu_head_item ">
+                                                                        <div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="fruits-vegetables/vegetables/seasonal-vegetables.html"><span class="sm_megamenu_title_lv2">Seasonal Vegetables</span></a></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!--End Module-->
+
+                                        <div class="search-header mini-cart-header">
+                                            <div class="block mini-cartpro sm-cartpro">
+                                                <div class="block-title">
+                                                    <div class="btn-toggle">
+                                                        <div class="info-mini-cart">
+                                                            <h2 class="cart-title">My Cart</h2>
+                                                            <div class="item-cart">
+                                                                0			
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="block-content" style="overflow: hidden; display: none;">
+                                                    <div class="block-inner" id="block-inner">
+                                                        <!--  <form action="http://www.onlinesabjiwala.com/checkout/cart/updatePost/" method="post" id="minicart-form_uq576b903d1459b">
+                                                            <input id="hdnformkey" type="hidden" name="form_key" value="2ERBcuLqJF1Ri1mx"> 
+                                                        </form>-->
+
+                                                        <div class="bottom-action actions">
+                                                            <div class="price-total">
+                                                                <span class="label-price-total">Total: </span><span class="price-total-w"><span class="price">₹165.00</span></span>
+                                                            </div>
+                                                            <button class="button btn-gotocart" type="button" title="Go to cart" onclick="location.href='http://localhost:59492/checkout/cart/'">
+                                                                <span><span>Go to cart</span></span>
+                                                            </button>
+
+                                                            <asp:Button ID="btnCheckOutdropdown" OnClick="btnCheckOut_Click" Text="CheckOut" class="button" runat="server"></asp:Button>
+                                                            <%--<button class="button" type="button" title="Checkout" onclick="setLocation('http://www.onlinesabjiwala.com/checkout/onepage/')">
+                                                                <span><span>Checkout</span></span>
+                                                            </button>--%>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a id="yt-totop" href="#" title="Go to Top" style="display: none;"></a>
+            </div>
+            <!-- END: Header -->
+
+            <!-- BEGIN: content -->
+            <div id="yt_content" class="yt-content wrap">
+                <div id="yt_main" class="yt-main col-main">
+                    <div class="yt-breadcrumbs">
+                        <div class="container">
+                            <div class="row">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="yt-main-inner yt-content-inner">
+                        <div class="container">
+                            <div class="row">
+                                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- END: content -->
+
+            <!-- BEGIN: footer -->
+            <div id="yt_footer" class="yt-footer wrap">
+                <div class="yt-footer-wrap">
+                    <div class="footer-top">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3">
+                                    <div class="socials-wrap">
+                                        <ul>
+                                            <li><a class="icon-facebook show_facebook" title="Facebook" href="https://www.facebook.com/onlinesabjiwala" target="_blank" data-icon="f"><span>Facebook</span></a></li>
+                                            <li><a class="icon-twitter show_twitter" title="Twitter" href="https://twitter.com/onlinesabjiwala" target="_blank" data-icon="l"><span>Twitter</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-9 col-md-9">
+                                    <div class="block block-subscribe-footer">
+                                        <div class="title-block">
+                                            <h2>SIGN UP FOR OUR NEWSLETTER </h2>
+                                            <p>Become A Smart Shopper Dont Miss Out Onlinesabjiwala Offers &amp; Deals</p>
+                                        </div>
+                                        <div class="block-content">
+                                            <div class="input-box">
+                                                <input type="text" name="email" id="newsletter" title="Sign up for our newsletter" class="input-text required-entry validate-email" value="Enter your email..." onblur="if(this.value=='') this.value='Enter your email...';" onfocus="if(this.value=='Enter your email...') this.value='';">
+                                            </div>
+                                            <div class="actions">
+                                                <button type="submit" title="Subscribe" class="button">
+                                                    <span><span>Subscribe </span></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-middle">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3  col-sm-6">
+                                    <div class="content-block-footer">
+                                        <h2 class="footer-logo">
+                                            <img alt="Onlinesabjiwala.com" src="/../skin/frontend/onlinesabjiwala/default/images/red/logo-footer.png"><span style="display: none;">Onlinesabjiwala.com</span></h2>
+                                        <p>Onlinesabjiwala.com is&nbsp;prefered destination for buying Fresh Vegetables &amp; Fruits in India, offering fresh and best prices and a completely hassle-free experience with options of paying through Cash on Delivery. Now shop for your Daily vegetable needs with descriptions. Get the best prices and the best online Vegetable shopping experience every time.</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-3  col-sm-6 account-block">
+                                    <div class="col-footer">
+                                        <div class="footer-title">
+                                            <h2>COMPANY</h2>
+                                        </div>
+                                        <div class="content-block-footer">
+                                            <ul>
+                                                <li><a href="about-online-sabjiwala.html"><span class="icon-double-angle-right">&nbsp;</span>About Us</a></li>
+                                                <li><a href="#"><span class="icon-double-angle-right">&nbsp;</span>Careers at Onlinesabjiwala</a></li>
+                                                <li><a href="privacy-policy.html"><span class="icon-double-angle-right">&nbsp;</span>Privacy Policy</a></li>
+                                                <li><a href="terms-and-conditions.html"><span class="icon-double-angle-right">&nbsp;</span>Terms &amp; Conditions</a></li>
+                                                <li><a href="contacts.html"><span class="icon-double-angle-right">&nbsp;</span>Contact Us</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-3  col-sm-6 infomation-block">
+                                    <div class="col-footer">
+                                        <div class="footer-title">
+                                            <h2>INFORMATION</h2>
+                                        </div>
+                                        <div class="content-block-footer">
+                                            <ul>
+                                                <li><a href="cancellations-returns-refund.html"><span class="icon-double-angle-right">&nbsp;</span>Cancellations, Returns &amp; Refund</a></li>
+                                                <li><a href="delivery-details.html"><span class="icon-double-angle-right">&nbsp;</span>Delivery Details</a></li>
+                                                <li><a href="os-faq.html"><span class="icon-double-angle-right">&nbsp;</span>Faq's</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-3  col-sm-6 contact-block">
+                                    <div class="col-footer">
+                                        <div class="footer-title">
+                                            <h2>Contact Us</h2>
+                                        </div>
+                                        <div class="content-block-footer">
+                                            <ul>
+                                                <li style="margin-top: -4px;"><span class="sp-ic icon-mobile-phone" style="font-size: 22px; position: relative; top: 4px;">&nbsp;</span>Telephone: <a title="Call:+91-808-227-6000" href="tel:+918082276000">+91-808-227-6000</a></li>
+                                                <li><span class="sp-ic icon-envelope" style="font-size: 13px; position: relative;">&nbsp;</span>E-mail: <a title="info@onlinesabjiwala.com" href="mailto:info@onlinesabjiwala.com">info@onlinesabjiwala.com</a></li>
+                                            </ul>
+                                            <ul class="payment-method">
+                                                <li><a title="Payment Method" href="#">
+                                                    <img alt="Payment Cash on Delivery" src="/../media/wysiwyg/cashondelivery.jpg"></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-bottom">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="copyright-footer">
+                                        © 2015 Onlinesabjiwala.com. All Rights Reserved				
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END: footer -->
+        </div>
+    </form>
+    <!-- Mirrored from www.onlinesabjiwala.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 May 2016 11:14:09 GMT -->
+</body>
+<script src="/../Scripts/custom/basic.js"></script>
+<script src="/../Scripts/custom/homepageproducts.js"></script>
+
+<script>
+    $(document).ready(function ($) {
+        getcarouselproducts();
+        $.when(getcarouselproducts()).done(function (data) {
+            getHomepageproductsAndGenerateHtml(data);
+            var owl_left = $(".basic-product");
+            owl_left.owlCarousel({
+                itemsCustom: [
+                    [0, 1],
+                    [480, 1],
+                    [768, 2],
+                    [992, 1],
+                    [1200, 1]
+                ],
+
+                slideSpeed: 300,
+                stopOnHover: true,
+                paginationSpeed: 400,
+                autoPlay: false,
+                pagination: false,
+            });
+            $(".nav-left-product .next-bs").click(function () {
+                owl_left.trigger('owl.next');
+            });
+            $(".nav-left-product .prev-bs").click(function () {
+                owl_left.trigger('owl.prev');
+            });
+        });
+    });
+</script>
+</html>

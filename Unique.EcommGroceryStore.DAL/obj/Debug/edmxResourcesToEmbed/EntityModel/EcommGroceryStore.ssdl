@@ -1,0 +1,459 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EcommGroceryOnlineModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AddressDetails">
+    <Key>
+      <PropertyRef Name="AddressId" />
+    </Key>
+    <Property Name="AddressId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Address" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Landmark" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Direction" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CityId" Type="int" Nullable="false" />
+    <Property Name="AreaId" Type="int" Nullable="false" />
+    <Property Name="CountryId" Type="int" Nullable="false" />
+    <Property Name="Pincode" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="AddressTypeId" Type="int" Nullable="false" />
+    <Property Name="OtherAddress" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsDefault" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AreaMaster">
+    <Key>
+      <PropertyRef Name="AreaId" />
+    </Key>
+    <Property Name="AreaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AreaName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CityId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cart">
+    <Key>
+      <PropertyRef Name="CartId" />
+    </Key>
+    <Property Name="CartId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IpAddress" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CartDetail">
+    <Key>
+      <PropertyRef Name="CartDetailId" />
+    </Key>
+    <Property Name="CartDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CartId" Type="int" />
+    <Property Name="ProductId" Type="int" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Discount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="NetAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Timestamp" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="PricePerUnit" Type="int" />
+    <Property Name="Unit" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CityMaster">
+    <Key>
+      <PropertyRef Name="CityId" />
+    </Key>
+    <Property Name="CityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CityName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CountryId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CountryMaster">
+    <Key>
+      <PropertyRef Name="CountryId" />
+    </Key>
+    <Property Name="CountryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CountryName" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CouponDetails">
+    <Key>
+      <PropertyRef Name="CouponId" />
+    </Key>
+    <Property Name="CouponId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CouponCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ExpDate" Type="datetime" Nullable="false" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="DiscountPer" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FollowUpDetails">
+    <Key>
+      <PropertyRef Name="FollowUpId" />
+    </Key>
+    <Property Name="FollowUpId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Day" Type="int" Nullable="false" />
+    <Property Name="Time" Type="time" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MainCategoryMaster">
+    <Key>
+      <PropertyRef Name="MainCategoryId" />
+    </Key>
+    <Property Name="MainCategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductDetails">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductName" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="SubCategoryId" Type="int" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="ImageURL" Type="varchar(max)" Nullable="false" />
+    <Property Name="PricePerUnit" Type="int" Nullable="false" />
+    <Property Name="Unit" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="IsOutOfStock" Type="bit" Nullable="false" />
+    <Property Name="IsLimitedStock" Type="bit" Nullable="false" />
+    <Property Name="IsSeasonalStock" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SubCategoryMaster">
+    <Key>
+      <PropertyRef Name="SubCategoryId" />
+    </Key>
+    <Property Name="SubCategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MainCategoryId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TransactionDetails">
+    <Key>
+      <PropertyRef Name="TransactionId" />
+    </Key>
+    <Property Name="TransactionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="TransactionDate" Type="datetime" Nullable="false" />
+    <Property Name="ConfirmationDate" Type="datetime" />
+    <Property Name="IsConfirm" Type="bit" Nullable="false" />
+    <Property Name="PGTransactionId" Type="varchar" MaxLength="250" />
+    <Property Name="InvoiceId" Type="varchar" MaxLength="50" />
+    <Property Name="Custom" Type="varchar" MaxLength="50" />
+    <Property Name="Custom1" Type="varchar" MaxLength="50" />
+    <Property Name="CartId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EmailId" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="MobileNumber" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="AlternateNumber" Type="varchar" MaxLength="20" />
+    <Property Name="IsFollowUp" Type="bit" Nullable="false" />
+    <Property Name="IPAddres" Type="varchar" MaxLength="50" />
+    <Property Name="RegistrationDate" Type="datetime" Nullable="false" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="LastLoginDate" Type="datetime" />
+    <Property Name="ActivationCode" Type="varchar" MaxLength="50" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_AddressDetails_AreaMaster">
+    <End Role="AreaMaster" Type="Self.AreaMaster" Multiplicity="1" />
+    <End Role="AddressDetails" Type="Self.AddressDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AreaMaster">
+        <PropertyRef Name="AreaId" />
+      </Principal>
+      <Dependent Role="AddressDetails">
+        <PropertyRef Name="AreaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AddressDetails_CityMaster">
+    <End Role="CityMaster" Type="Self.CityMaster" Multiplicity="1" />
+    <End Role="AddressDetails" Type="Self.AddressDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CityMaster">
+        <PropertyRef Name="CityId" />
+      </Principal>
+      <Dependent Role="AddressDetails">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AddressDetails_CountryMaster">
+    <End Role="CountryMaster" Type="Self.CountryMaster" Multiplicity="1" />
+    <End Role="AddressDetails" Type="Self.AddressDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CountryMaster">
+        <PropertyRef Name="CountryId" />
+      </Principal>
+      <Dependent Role="AddressDetails">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AddressDetails_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="AddressDetails" Type="Self.AddressDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="AddressDetails">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AreaMaster_CityMaster">
+    <End Role="CityMaster" Type="Self.CityMaster" Multiplicity="1" />
+    <End Role="AreaMaster" Type="Self.AreaMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CityMaster">
+        <PropertyRef Name="CityId" />
+      </Principal>
+      <Dependent Role="AreaMaster">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CardDetail_Cart">
+    <End Role="Cart" Type="Self.Cart" Multiplicity="0..1" />
+    <End Role="CartDetail" Type="Self.CartDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cart">
+        <PropertyRef Name="CartId" />
+      </Principal>
+      <Dependent Role="CartDetail">
+        <PropertyRef Name="CartId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cart_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Cart">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CartDetail_ProductDetails">
+    <End Role="ProductDetails" Type="Self.ProductDetails" Multiplicity="0..1" />
+    <End Role="CartDetail" Type="Self.CartDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductDetails">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="CartDetail">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CityMaster_CountryMaster">
+    <End Role="CountryMaster" Type="Self.CountryMaster" Multiplicity="1" />
+    <End Role="CityMaster" Type="Self.CityMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CountryMaster">
+        <PropertyRef Name="CountryId" />
+      </Principal>
+      <Dependent Role="CityMaster">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FollowUpDetails_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="FollowUpDetails" Type="Self.FollowUpDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="FollowUpDetails">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductDetails_SubCategoryMaster">
+    <End Role="SubCategoryMaster" Type="Self.SubCategoryMaster" Multiplicity="1" />
+    <End Role="ProductDetails" Type="Self.ProductDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubCategoryMaster">
+        <PropertyRef Name="SubCategoryId" />
+      </Principal>
+      <Dependent Role="ProductDetails">
+        <PropertyRef Name="SubCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubCategoryMaster_MainCategoryMaster">
+    <End Role="MainCategoryMaster" Type="Self.MainCategoryMaster" Multiplicity="1" />
+    <End Role="SubCategoryMaster" Type="Self.SubCategoryMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MainCategoryMaster">
+        <PropertyRef Name="MainCategoryId" />
+      </Principal>
+      <Dependent Role="SubCategoryMaster">
+        <PropertyRef Name="MainCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TransactionDetails_Cart">
+    <End Role="Cart" Type="Self.Cart" Multiplicity="1" />
+    <End Role="TransactionDetails" Type="Self.TransactionDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cart">
+        <PropertyRef Name="CartId" />
+      </Principal>
+      <Dependent Role="TransactionDetails">
+        <PropertyRef Name="CartId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TransactionDetails_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="TransactionDetails" Type="Self.TransactionDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="TransactionDetails">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Roles">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="Sp_GetProductDetailsList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="currentIndex" Type="int" Mode="In" />
+    <Parameter Name="pageSize" Type="int" Mode="In" />
+    <Parameter Name="orderByClause" Type="varchar" Mode="In" />
+    <Parameter Name="search" Type="varchar" Mode="In" />
+    <Parameter Name="MainCategoryId" Type="int" Mode="In" />
+    <Parameter Name="SubCategoryId" Type="int" Mode="In" />
+    <Parameter Name="totalRecords" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="Sp_GetTransactionList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CartId" Type="int" Mode="In" />
+    <Parameter Name="Search" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Sp_GetUserList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="currentIndex" Type="int" Mode="In" />
+    <Parameter Name="pageSize" Type="int" Mode="In" />
+    <Parameter Name="orderByClause" Type="varchar" Mode="In" />
+    <Parameter Name="search" Type="varchar" Mode="In" />
+    <Parameter Name="totalRecords" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="Sp_GetUserTransactionList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="currentIndex" Type="int" Mode="In" />
+    <Parameter Name="pageSize" Type="int" Mode="In" />
+    <Parameter Name="orderByClause" Type="varchar" Mode="In" />
+    <Parameter Name="search" Type="varchar" Mode="In" />
+    <Parameter Name="totalRecords" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="Sp_UpdateDeleteProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProductId" Type="int" Mode="In" />
+    <Parameter Name="ProductStatus" Type="bit" Mode="In" />
+    <Parameter Name="Status" Type="int" Mode="InOut" />
+    <Parameter Name="Op" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Sp_UpdateDeleteUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="UserStatus" Type="bit" Mode="In" />
+    <Parameter Name="Status" Type="int" Mode="InOut" />
+    <Parameter Name="Op" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="EcommGroceryOnlineModelStoreContainer">
+    <EntitySet Name="AddressDetails" EntityType="Self.AddressDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AreaMaster" EntityType="Self.AreaMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cart" EntityType="Self.Cart" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CartDetail" EntityType="Self.CartDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CityMaster" EntityType="Self.CityMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CountryMaster" EntityType="Self.CountryMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CouponDetails" EntityType="Self.CouponDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FollowUpDetails" EntityType="Self.FollowUpDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MainCategoryMaster" EntityType="Self.MainCategoryMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductDetails" EntityType="Self.ProductDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SubCategoryMaster" EntityType="Self.SubCategoryMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TransactionDetails" EntityType="Self.TransactionDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_AddressDetails_AreaMaster" Association="Self.FK_AddressDetails_AreaMaster">
+      <End Role="AreaMaster" EntitySet="AreaMaster" />
+      <End Role="AddressDetails" EntitySet="AddressDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AddressDetails_CityMaster" Association="Self.FK_AddressDetails_CityMaster">
+      <End Role="CityMaster" EntitySet="CityMaster" />
+      <End Role="AddressDetails" EntitySet="AddressDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AddressDetails_CountryMaster" Association="Self.FK_AddressDetails_CountryMaster">
+      <End Role="CountryMaster" EntitySet="CountryMaster" />
+      <End Role="AddressDetails" EntitySet="AddressDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AddressDetails_Users" Association="Self.FK_AddressDetails_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="AddressDetails" EntitySet="AddressDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AreaMaster_CityMaster" Association="Self.FK_AreaMaster_CityMaster">
+      <End Role="CityMaster" EntitySet="CityMaster" />
+      <End Role="AreaMaster" EntitySet="AreaMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CardDetail_Cart" Association="Self.FK_CardDetail_Cart">
+      <End Role="Cart" EntitySet="Cart" />
+      <End Role="CartDetail" EntitySet="CartDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cart_Users" Association="Self.FK_Cart_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Cart" EntitySet="Cart" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CartDetail_ProductDetails" Association="Self.FK_CartDetail_ProductDetails">
+      <End Role="ProductDetails" EntitySet="ProductDetails" />
+      <End Role="CartDetail" EntitySet="CartDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CityMaster_CountryMaster" Association="Self.FK_CityMaster_CountryMaster">
+      <End Role="CountryMaster" EntitySet="CountryMaster" />
+      <End Role="CityMaster" EntitySet="CityMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FollowUpDetails_Users" Association="Self.FK_FollowUpDetails_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="FollowUpDetails" EntitySet="FollowUpDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductDetails_SubCategoryMaster" Association="Self.FK_ProductDetails_SubCategoryMaster">
+      <End Role="SubCategoryMaster" EntitySet="SubCategoryMaster" />
+      <End Role="ProductDetails" EntitySet="ProductDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubCategoryMaster_MainCategoryMaster" Association="Self.FK_SubCategoryMaster_MainCategoryMaster">
+      <End Role="MainCategoryMaster" EntitySet="MainCategoryMaster" />
+      <End Role="SubCategoryMaster" EntitySet="SubCategoryMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TransactionDetails_Cart" Association="Self.FK_TransactionDetails_Cart">
+      <End Role="Cart" EntitySet="Cart" />
+      <End Role="TransactionDetails" EntitySet="TransactionDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TransactionDetails_Users" Association="Self.FK_TransactionDetails_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="TransactionDetails" EntitySet="TransactionDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Roles" Association="Self.FK_Users_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
