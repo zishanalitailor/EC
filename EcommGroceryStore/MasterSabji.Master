@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterSabji.Master.cs" Inherits="EcommGroceryStore.MasterSabji" %>
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterSabji.Master.cs" Inherits="EcommGroceryStore.MasterSabji" %>
 
 <!DOCTYPE html>
 <html xml:lang="en" lang="en">
@@ -149,20 +149,39 @@
                                                         </div>
                                                     </div>
                                                 </div>
+
+
                                             </ul>
+
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="col-lg-6 col-md-7 top-links-action">
+
                                     <div class="block-action-header top-link-account checkout-link">
                                         <ul class="links">
                                             <li class="first last">
+                                                <%--    <a href="#" id="linkCheckOut" onclick="btnCheckOut_Click" runat="server" title="Checkout" class="top-link-checkout">Checkout</a><asp:HyperLink ID="HyperLink1" runat="server">HyperLink</asp:HyperLink>--%>
                                                 <asp:LinkButton ID="LinkButton1" OnClick="btnCheckOut_Click" class="top-link-checkout" runat="server">Checkout</asp:LinkButton>
                                             </li>
                                         </ul>
                                     </div>
-
+                                    <% if (HttpContext.Current.User.Identity.IsAuthenticated)
+                                        {%>
+                                    <div class="block-action-header top-link-account my-account-link">
+                                        <ul>
+                                            <li>
+                                                <a class="account-toplink dropdown-ict" title="My Account" href="customer/account/index.html">My Account</a>
+                                                <ul class="dropdown-link-account">
+                                                    <li><a title="My Orders" href="/Account/MyOrders.aspx">My Orders</a></li>
+                                                    <li><a title="Account Information" href="/Account/MyOrders.aspx">Account Information</a></li>
+                                                    <li><a title="Address Book" href="/Account/MyOrders.aspx">Address Book</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <% } %>
                                     <div class="block-action-header top-link-account login-link">
                                         <ul>
                                             <li>
@@ -192,9 +211,9 @@
                                                     <li class="first last"><a href="checkout/index.html" title="Checkout" class="top-link-checkout">Checkout</a></li>
                                                 </ul>
                                                 <ul class="dropdown-link-account">
-                                                    <li><a title="My Orders" href="sales/order/history/index.html">My Orders</a></li>
-                                                    <li><a title="Account Information" href="customer/account/edit/index.html">Account Information</a></li>
-                                                    <li><a title="Address Book" href="customer/address/index.html">Address Book</a></li>
+                                                    <li><a title="My Orders" href="/Account/MyOrders.aspx">My Orders</a></li>
+                                                    <li><a title="Account Information" href="/Account/MyOrders.aspx">Account Information</a></li>
+                                                    <li><a title="Address Book" href="/Account/MyOrders.aspx">Address Book</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -216,32 +235,32 @@
 
                                     </div>
 
-                                    <% if (HttpContext.Current.User.Identity.IsAuthenticated)
-                                        {%>
-                                    <div class="block-action-header top-link-account my-account-link">
-                                        <ul>
-                                            <li>
-                                                <a class="account-toplink dropdown-ict" title="My Account" href="customer/account/index.html">My Account</a>
-                                                <ul class="dropdown-link-account">
-                                                    <li><a title="My Orders" href="/Apps/User/MyOrders.aspx">My Orders</a></li>
-                                                    <li><a title="Account Information" href="customer/account/edit/index.html">Account Information</a></li>
-                                                    <li><a title="Address Book" href="customer/address/index.html">Address Book</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <% } %>
+																							 
+										   
+																									  
+											
+												
+																																							
+																				  
+																															   
+																																						   
+																																		
+													 
+												 
+											 
+										  
+										   
 
-                                    <% if (HttpContext.Current.User.Identity.IsAuthenticated && HttpContext.Current.User.IsInRole("Admin"))
-                                        {%>
-                                    <div class="block-action-header top-link-account login-link">
-                                        <ul>
-                                            <li>
-                                                <asp:HyperLink Text="Administration" NavigateUrl="~/Apps/Admin/Default.aspx" runat="server" />
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <%} %>
+																																		   
+										   
+																								 
+											
+												
+																																			  
+												 
+											 
+										  
+										  
                                 </div>
                             </div>
                         </div>
@@ -266,7 +285,8 @@
                                             <div class="form-search">
                                                 <div class="cat-wrapper">
                                                     <div class="selector" id="uniform-cat" style="width: 134px;">
-                                                        <span style="width: 124px; -webkit-user-select: none;">All Categories</span><select id="cat" name="cat" class="jqtransformdone">
+                                                        <span style="width: 124px; -webkit-user-select: none;">All Categories</span>
+                                                        <select id="cat" name="cat" class="jqtransformdone">
                                                             <option value="">All Categories</option>
                                                             <option value="29">- Fruits &amp; Vegetables</option>
                                                             <option value="8">- - Fruits</option>
@@ -377,33 +397,321 @@
                                                     <li class="other-toggle sm_megamenu_lv1 sm_megamenu_nodrop   ">
                                                         <a class="sm_megamenu_head sm_megamenu_nodrop " href="/products.aspx/fruits" id="sm_megamenu_5">
                                                             <span class="sm_megamenu_icon sm_megamenu_nodesc">
-                                                                <span class="sm_megamenu_title">Fruits</span>
+                                                                <span class="sm_megamenu_title">Pan Asian</span>
                                                             </span>
                                                         </a>
-                                                    </li>
-                                                    <li class="electronic-item-parent other-toggle   sm_megamenu_lv1 sm_megamenu_drop parent   ">
-                                                        <a class="sm_megamenu_head sm_megamenu_drop " href="/products.aspx/vegetables" id="sm_megamenu_6">
-                                                            <span class="sm_megamenu_icon sm_megamenu_nodesc">
-                                                                <span class="sm_megamenu_title">Vegetables</span>
-                                                            </span>
-                                                        </a>
-                                                        <div class="sm-megamenu-child sm_megamenu_dropdown_3columns hidden">
+                                                        <div class="sm-megamenu-child sm_megamenu_dropdown_3columns">
                                                             <div class="sm_megamenu_col_3 sm_megamenu_firstcolumn  sm_megamenu_id6   electronic-item">
                                                                 <div class="sm_megamenu_col_2 sm_megamenu_firstcolumn  sm_megamenu_id7   ">
                                                                     <div class="sm_megamenu_head_item ">
-                                                                        <div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="fruits-vegetables/vegetables/green-leafy-vegetables.html"><span class="sm_megamenu_title_lv2">Leafy Vegetables</span></a></div>
+                                                                        <div class="sm_megamenu_title">
+                                                                            <a class="sm_megamenu_nodrop " 
+                                                                                href="fruits-vegetables/vegetables/green-leafy-vegetables.html">
+                                                                                <span class="sm_megamenu_title_lv2">SOUPS</span>
+                                                                            </a>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="sm_megamenu_col_2 sm_megamenu_firstcolumn  sm_megamenu_id8   ">
                                                                     <div class="sm_megamenu_head_item ">
-                                                                        <div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="fruits-vegetables/vegetables/exotic-vegetables.html"><span class="sm_megamenu_title_lv2">Exotic Vegetables</span></a></div>
+                                                                        <div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " 
+                                                                            href="fruits-vegetables/vegetables/exotic-vegetables.html">
+                                                                            <span class="sm_megamenu_title_lv2">STARTERS</span>
+                                                                        </a></div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="sm_megamenu_col_2 sm_megamenu_firstcolumn  sm_megamenu_id9   ">
                                                                     <div class="sm_megamenu_head_item ">
-                                                                        <div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="fruits-vegetables/vegetables/seasonal-vegetables.html"><span class="sm_megamenu_title_lv2">Seasonal Vegetables</span></a></div>
+                                                                        <div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " 
+                                                                            href="fruits-vegetables/vegetables/seasonal-vegetables.html">
+                                                                            <span class="sm_megamenu_title_lv2">MAINS</span>
+                                                                        </a></div>
                                                                     </div>
                                                                 </div>
+                                                                <div class="sm_megamenu_col_2 sm_megamenu_firstcolumn  sm_megamenu_id9   ">
+                                                                    <div class="sm_megamenu_head_item ">
+                                                                        <div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " 
+                                                                            href="fruits-vegetables/vegetables/seasonal-vegetables.html">
+                                                                            <span class="sm_megamenu_title_lv2">RICE</span>
+                                                                        </a></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="sm_megamenu_col_2 sm_megamenu_firstcolumn  sm_megamenu_id9   ">
+                                                                    <div class="sm_megamenu_head_item ">
+                                                                        <div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " 
+                                                                            href="fruits-vegetables/vegetables/seasonal-vegetables.html">
+                                                                            <span class="sm_megamenu_title_lv2">SIDES</span>
+                                                                        </a></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="electronic-item-parent other-toggle   sm_megamenu_lv1 sm_megamenu_drop parent   ">
+                                                        <a class="sm_megamenu_head sm_megamenu_drop " href="/products.aspx/vegetables" id="sm_megamenu_6">
+                                                            <span class="sm_megamenu_icon sm_megamenu_nodesc">
+                                                                <span class="sm_megamenu_title">Continental</span>
+                                                            </span>
+                                                        </a>
+                                                        <div class="sm-megamenu-child sm_megamenu_dropdown_3columns">
+                                                            <div class="sm_megamenu_col_3 sm_megamenu_firstcolumn  sm_megamenu_id6   electronic-item">
+                                                                <div class="sm_megamenu_col_2 sm_megamenu_firstcolumn  sm_megamenu_id7   ">
+                                                                    <div class="sm_megamenu_head_item ">
+                                                                        <div class="sm_megamenu_title">
+                                                                            <a class="sm_megamenu_nodrop " 
+                                                                                href="fruits-vegetables/vegetables/green-leafy-vegetables.html">
+                                                                                <span class="sm_megamenu_title_lv2">SOUPS</span>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="sm_megamenu_col_2 sm_megamenu_firstcolumn  sm_megamenu_id8   ">
+                                                                    <div class="sm_megamenu_head_item ">
+                                                                        <div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " 
+                                                                            href="fruits-vegetables/vegetables/exotic-vegetables.html">
+                                                                            <span class="sm_megamenu_title_lv2">STARTERS</span>
+                                                                        </a></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="sm_megamenu_col_2 sm_megamenu_firstcolumn  sm_megamenu_id7   ">
+                                                                    <div class="sm_megamenu_head_item ">
+                                                                        <div class="sm_megamenu_title">
+                                                                            <a class="sm_megamenu_nodrop " 
+                                                                                href="fruits-vegetables/vegetables/green-leafy-vegetables.html">
+                                                                                <span class="sm_megamenu_title_lv2">PASTA</span>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="sm_megamenu_col_2 sm_megamenu_firstcolumn  sm_megamenu_id8   ">
+                                                                    <div class="sm_megamenu_head_item ">
+                                                                        <div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " 
+                                                                            href="fruits-vegetables/vegetables/exotic-vegetables.html">
+                                                                            <span class="sm_megamenu_title_lv2">SIZZLERS</span>
+                                                                        </a></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="sm_megamenu_col_2 sm_megamenu_firstcolumn  sm_megamenu_id8   ">
+                                                                    <div class="sm_megamenu_head_item ">
+                                                                        <div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " 
+                                                                            href="fruits-vegetables/vegetables/exotic-vegetables.html">
+                                                                            <span class="sm_megamenu_title_lv2">PIZZA</span>
+                                                                        </a></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="electronic-item-parent other-toggle   sm_megamenu_lv1 sm_megamenu_drop parent   ">
+                                                        <a class="sm_megamenu_head sm_megamenu_drop " href="/products.aspx/vegetables" id="sm_megamenu_6">
+                                                            <span class="sm_megamenu_icon sm_megamenu_nodesc">
+                                                                <span class="sm_megamenu_title">South Indian</span>
+                                                            </span>
+                                                        </a>
+                                                        <div class="sm-megamenu-child sm_megamenu_dropdown_3columns">
+                                                            <div class="sm_megamenu_col_3 sm_megamenu_firstcolumn  sm_megamenu_id6   electronic-item">
+                                                                <div class="sm_megamenu_col_2 sm_megamenu_firstcolumn  sm_megamenu_id7   ">
+                                                                    <div class="sm_megamenu_head_item ">
+                                                                        <div class="sm_megamenu_title">
+                                                                            <a class="sm_megamenu_nodrop " 
+                                                                                href="fruits-vegetables/vegetables/green-leafy-vegetables.html">
+                                                                                <span class="sm_megamenu_title_lv2">RASAM</span>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="sm_megamenu_col_2 sm_megamenu_firstcolumn  sm_megamenu_id8   ">
+                                                                    <div class="sm_megamenu_head_item ">
+                                                                        <div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " 
+                                                                            href="fruits-vegetables/vegetables/exotic-vegetables.html">
+                                                                            <span class="sm_megamenu_title_lv2">STARTERS - VEG</span>
+                                                                        </a></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="sm_megamenu_col_2 sm_megamenu_firstcolumn  sm_megamenu_id7   ">
+                                                                    <div class="sm_megamenu_head_item ">
+                                                                        <div class="sm_megamenu_title">
+                                                                            <a class="sm_megamenu_nodrop " 
+                                                                                href="fruits-vegetables/vegetables/green-leafy-vegetables.html">
+                                                                                <span class="sm_megamenu_title_lv2">STARTERS -NON-VEG</span>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="sm_megamenu_col_2 sm_megamenu_firstcolumn  sm_megamenu_id8   ">
+                                                                    <div class="sm_megamenu_head_item ">
+                                                                        <div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " 
+                                                                            href="fruits-vegetables/vegetables/exotic-vegetables.html">
+                                                                            <span class="sm_megamenu_title_lv2">KURALU/SIDES</span>
+                                                                        </a></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="sm_megamenu_col_2 sm_megamenu_firstcolumn  sm_megamenu_id8   ">
+                                                                    <div class="sm_megamenu_head_item ">
+                                                                        <div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " 
+                                                                            href="fruits-vegetables/vegetables/exotic-vegetables.html">
+                                                                            <span class="sm_megamenu_title_lv2">KODI/CHICKEN</span>
+                                                                        </a></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="sm_megamenu_col_2 sm_megamenu_firstcolumn  sm_megamenu_id8   ">
+                                                                    <div class="sm_megamenu_head_item ">
+                                                                        <div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " 
+                                                                            href="fruits-vegetables/vegetables/exotic-vegetables.html">
+                                                                            <span class="sm_megamenu_title_lv2">CHEPA/FISH</span>
+                                                                        </a></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="sm_megamenu_col_2 sm_megamenu_firstcolumn  sm_megamenu_id8   ">
+                                                                    <div class="sm_megamenu_head_item ">
+                                                                        <div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " 
+                                                                            href="fruits-vegetables/vegetables/exotic-vegetables.html">
+                                                                            <span class="sm_megamenu_title_lv2">MAMSAM/MUTTON</span>
+                                                                        </a></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="sm_megamenu_col_2 sm_megamenu_firstcolumn  sm_megamenu_id8   ">
+                                                                    <div class="sm_megamenu_head_item ">
+                                                                        <div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " 
+                                                                            href="fruits-vegetables/vegetables/exotic-vegetables.html">
+                                                                            <span class="sm_megamenu_title_lv2">STAPLES</span>
+                                                                        </a></div>
+                                                                    </div>
+                                                                </div> 
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="electronic-item-parent other-toggle   sm_megamenu_lv1 sm_megamenu_drop parent   ">
+                                                        <a class="sm_megamenu_head sm_megamenu_drop " href="/products.aspx/vegetables" id="sm_megamenu_6">
+                                                            <span class="sm_megamenu_icon sm_megamenu_nodesc">
+                                                                <span class="sm_megamenu_title">Pan Indian</span>
+                                                            </span>
+                                                        </a>
+                                                        <div class="sm-megamenu-child sm_megamenu_dropdown_3columns">
+                                                            <div class="sm_megamenu_col_3 sm_megamenu_firstcolumn  sm_megamenu_id6   electronic-item">
+                                                                <div class="sm_megamenu_col_2 sm_megamenu_firstcolumn  sm_megamenu_id7   ">
+                                                                    <div class="sm_megamenu_head_item ">
+                                                                        <div class="sm_megamenu_title">
+                                                                            <a class="sm_megamenu_nodrop " 
+                                                                                href="fruits-vegetables/vegetables/green-leafy-vegetables.html">
+                                                                                <span class="sm_megamenu_title_lv2">SHORBA</span>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="sm_megamenu_col_2 sm_megamenu_firstcolumn  sm_megamenu_id8   ">
+                                                                    <div class="sm_megamenu_head_item ">
+                                                                        <div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " 
+                                                                            href="fruits-vegetables/vegetables/exotic-vegetables.html">
+                                                                            <span class="sm_megamenu_title_lv2">STARTERS - VEG</span>
+                                                                        </a></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="sm_megamenu_col_2 sm_megamenu_firstcolumn  sm_megamenu_id7   ">
+                                                                    <div class="sm_megamenu_head_item ">
+                                                                        <div class="sm_megamenu_title">
+                                                                            <a class="sm_megamenu_nodrop " 
+                                                                                href="fruits-vegetables/vegetables/green-leafy-vegetables.html">
+                                                                                <span class="sm_megamenu_title_lv2">STARTERS -NON-VEG</span>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="sm_megamenu_col_2 sm_megamenu_firstcolumn  sm_megamenu_id8   ">
+                                                                    <div class="sm_megamenu_head_item ">
+                                                                        <div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " 
+                                                                            href="fruits-vegetables/vegetables/exotic-vegetables.html">
+                                                                            <span class="sm_megamenu_title_lv2">SIDES - VEG</span>
+                                                                        </a></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="sm_megamenu_col_2 sm_megamenu_firstcolumn  sm_megamenu_id8   ">
+                                                                    <div class="sm_megamenu_head_item ">
+                                                                        <div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " 
+                                                                            href="fruits-vegetables/vegetables/exotic-vegetables.html">
+                                                                            <span class="sm_megamenu_title_lv2">DAL</span>
+                                                                        </a></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="sm_megamenu_col_2 sm_megamenu_firstcolumn  sm_megamenu_id8   ">
+                                                                    <div class="sm_megamenu_head_item ">
+                                                                        <div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " 
+                                                                            href="fruits-vegetables/vegetables/exotic-vegetables.html">
+                                                                            <span class="sm_megamenu_title_lv2">SIDES - NON VEG</span>
+                                                                        </a></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="sm_megamenu_col_2 sm_megamenu_firstcolumn  sm_megamenu_id8   ">
+                                                                    <div class="sm_megamenu_head_item ">
+                                                                        <div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " 
+                                                                            href="fruits-vegetables/vegetables/exotic-vegetables.html">
+                                                                            <span class="sm_megamenu_title_lv2">CHAWAL</span>
+                                                                        </a></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="sm_megamenu_col_2 sm_megamenu_firstcolumn  sm_megamenu_id8   ">
+                                                                    <div class="sm_megamenu_head_item ">
+                                                                        <div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " 
+                                                                            href="fruits-vegetables/vegetables/exotic-vegetables.html">
+                                                                            <span class="sm_megamenu_title_lv2">RAITA</span>
+                                                                        </a></div>
+                                                                    </div>
+                                                                </div> 
+                                                                <div class="sm_megamenu_col_2 sm_megamenu_firstcolumn  sm_megamenu_id8   ">
+                                                                    <div class="sm_megamenu_head_item ">
+                                                                        <div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " 
+                                                                            href="fruits-vegetables/vegetables/exotic-vegetables.html">
+                                                                            <span class="sm_megamenu_title_lv2">ROTI</span>
+                                                                        </a></div>
+                                                                    </div>
+                                                                </div> 
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="electronic-item-parent other-toggle   sm_megamenu_lv1 sm_megamenu_drop parent   ">
+                                                        <a class="sm_megamenu_head sm_megamenu_drop " href="/products.aspx/vegetables" id="sm_megamenu_6">
+                                                            <span class="sm_megamenu_icon sm_megamenu_nodesc">
+                                                                <span class="sm_megamenu_title">Desserts</span>
+                                                            </span>
+                                                        </a>
+                                                        <div class="sm-megamenu-child sm_megamenu_dropdown_3columns">
+                                                            <div class="sm_megamenu_col_3 sm_megamenu_firstcolumn  sm_megamenu_id6   electronic-item">
+                                                                <div class="sm_megamenu_col_2 sm_megamenu_firstcolumn  sm_megamenu_id7   ">
+                                                                    <div class="sm_megamenu_head_item ">
+                                                                        <div class="sm_megamenu_title">
+                                                                            <a class="sm_megamenu_nodrop " 
+                                                                                href="fruits-vegetables/vegetables/green-leafy-vegetables.html">
+                                                                                <span class="sm_megamenu_title_lv2">Pan Asian</span>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="sm_megamenu_col_2 sm_megamenu_firstcolumn  sm_megamenu_id8   ">
+                                                                    <div class="sm_megamenu_head_item ">
+                                                                        <div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " 
+                                                                            href="fruits-vegetables/vegetables/exotic-vegetables.html">
+                                                                            <span class="sm_megamenu_title_lv2">Continental</span>
+                                                                        </a></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="sm_megamenu_col_2 sm_megamenu_firstcolumn  sm_megamenu_id7   ">
+                                                                    <div class="sm_megamenu_head_item ">
+                                                                        <div class="sm_megamenu_title">
+                                                                            <a class="sm_megamenu_nodrop " 
+                                                                                href="fruits-vegetables/vegetables/green-leafy-vegetables.html">
+                                                                                <span class="sm_megamenu_title_lv2">South Indian</span>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="sm_megamenu_col_2 sm_megamenu_firstcolumn  sm_megamenu_id8   ">
+                                                                    <div class="sm_megamenu_head_item ">
+                                                                        <div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " 
+                                                                            href="fruits-vegetables/vegetables/exotic-vegetables.html">
+                                                                            <span class="sm_megamenu_title_lv2">Pan Indian</span>
+                                                                        </a></div>
+                                                                    </div>
+                                                                </div> 
                                                             </div>
                                                         </div>
                                                     </li>
@@ -610,11 +918,11 @@
             var owl_left = $(".basic-product");
             owl_left.owlCarousel({
                 itemsCustom: [
-                    [0, 1],
-                    [480, 1],
-                    [768, 2],
-                    [992, 1],
-                    [1200, 1]
+                [0, 1],
+                [480, 1],
+                [768, 2],
+                [992, 1],
+                [1200, 1]
                 ],
 
                 slideSpeed: 300,
