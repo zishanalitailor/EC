@@ -8,9 +8,10 @@
             OnRowEditing="gvMainCategory_RowEditing"
             OnRowUpdating="gvMainCategory_RowUpdating"
             OnRowCancelingEdit="gvMainCategory_RowCancelingEdit"
-            PageSize="10">
+            OnRowDeleting="gvMainCategory_RowDeleting"
+            PageSize="50">
             <Columns>
-                <asp:TemplateField HeaderText="Main CategoryId">
+                <asp:TemplateField Visible="false" HeaderText="Main CategoryId">
                     <ItemTemplate>
                         <asp:Label ID="lblCategoryId" runat="server" Text='<%# Eval("MainCategoryId")%>'></asp:Label>
                     </ItemTemplate>
@@ -27,15 +28,13 @@
                         <asp:RequiredFieldValidator ErrorMessage="Main Category name can not be blank." ForeColor="Red" Font-Size="Small" ControlToValidate="txtAddCategory" ValidationGroup="insert" runat="server" />
                     </FooterTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="Action">
-                    <ItemTemplate>
-                        <asp:LinkButton ID="lnkRemove" runat="server" CommandArgument='<%# Eval("MainCategoryId")%>' OnClientClick="return confirm('Do you want to delete?')" Text="Delete" OnClick="lnkRemove_Click"></asp:LinkButton>
-                    </ItemTemplate>
+                <asp:CommandField HeaderText="Action" ShowDeleteButton="true" ShowEditButton="True" />
+                <asp:TemplateField HeaderStyle-Width="120px">
                     <FooterTemplate>
                         <asp:Button ID="btnAddMainCategory" ValidationGroup="insert" runat="server" Text="Add Category" OnClick="btnAddMainCategory_Click" />
                     </FooterTemplate>
                 </asp:TemplateField>
-                <asp:CommandField ShowEditButton="True" />
+
             </Columns>
         </asp:GridView>
     </div>

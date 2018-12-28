@@ -25,7 +25,7 @@ namespace EcommGroceryStore.Apps.Admin
             using (MasterCategoryRepository repository = new MasterCategoryRepository())
             {
                 List<MainCategoryMaster> mainCategory;
-                mainCategory = repository.GetList(0).ToList();
+                mainCategory = repository.GetList(0).OrderBy(r => r.Name).ToList();
                 if (mainCategory.Count() > 0)
                 {
                     gvMainCategory.DataSource = mainCategory;
@@ -45,17 +45,6 @@ namespace EcommGroceryStore.Apps.Admin
                 };
 
                 repository.Add(newMaster);
-            }
-            BindMasterCategory();
-        }
-
-        protected void lnkRemove_Click(object sender, EventArgs e)
-        {
-            LinkButton lnkRemove = (LinkButton)sender;
-            int Id = Convert.ToInt32(lnkRemove.CommandArgument);
-            using (MasterCategoryRepository repository = new MasterCategoryRepository())
-            {
-                repository.Delete(Id);
             }
             BindMasterCategory();
         }
@@ -93,6 +82,16 @@ namespace EcommGroceryStore.Apps.Admin
         protected void gvMainCategory_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             gvMainCategory.EditIndex = -1;
+            BindMasterCategory();
+        }
+
+        protected void gvMainCategory_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            int mainCategoryId = Convert.ToInt32(((Label)gvMainCategory.Rows[e.RowIndex].FindControl("lblCategoryId")).Text);
+            using (MasterCategoryRepository repository = new MasterCategoryRepository())
+            {
+                repository.Delete(mainCategoryId);
+            }
             BindMasterCategory();
         }
     }

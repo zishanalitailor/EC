@@ -11,9 +11,10 @@
             OnRowUpdating="gvSubCategory_RowUpdating"
             OnRowCancelingEdit="gvSubCategory_RowCancelingEdit"
             OnRowDataBound="gvSubCategory_RowDataBound"
-            PageSize="10">
+            OnRowDeleting="gvSubCategory_RowDeleting"
+            PageSize="50">
             <Columns>
-                <asp:TemplateField HeaderText="Sub CategoryId">
+                <asp:TemplateField Visible="false" HeaderText="Sub CategoryId">
                     <ItemTemplate>
                         <asp:Label ID="lblCategoryId" runat="server" Text='<%# Eval("SubCategoryId")%>'></asp:Label>
                     </ItemTemplate>
@@ -44,15 +45,12 @@
                         <asp:RequiredFieldValidator ErrorMessage="Sub Category name can not be blank." ForeColor="Red" Font-Size="Small" ControlToValidate="txtAddCategory" ValidationGroup="insert" runat="server" />
                     </FooterTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="Action">
-                    <ItemTemplate>
-                        <asp:LinkButton ID="lnkRemove" runat="server" CommandArgument='<%# Eval("SubCategoryId")%>' OnClientClick="return confirm('Do you want to delete?')" Text="Delete" OnClick="lnkRemove_Click"></asp:LinkButton>
-                    </ItemTemplate>
+                <asp:CommandField HeaderText="Action" ShowEditButton="True" ShowDeleteButton="true" />
+                <asp:TemplateField HeaderStyle-Width="120px">
                     <FooterTemplate>
                         <asp:Button ID="btnAddSubCategory" ValidationGroup="insert" runat="server" Text="Add Category" OnClick="btnAddSubCategory_Click" />
                     </FooterTemplate>
                 </asp:TemplateField>
-                <asp:CommandField ShowEditButton="True" />
             </Columns>
         </asp:GridView>
     </div>

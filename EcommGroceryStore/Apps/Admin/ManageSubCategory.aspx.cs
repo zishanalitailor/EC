@@ -25,7 +25,7 @@ namespace EcommGroceryStore.Apps.Admin
             List<SubCategoryMasterModel> subCategory;
             using (SubCategoryMasterRepository repository = new SubCategoryMasterRepository())
             {
-                subCategory = repository.GetList().ToList();
+                subCategory = repository.GetList().OrderBy(r => r.MainCategoryName).ToList();
                 if (subCategory.Count > 0)
                 {
                     gvSubCategory.DataSource = subCategory;
@@ -72,17 +72,6 @@ namespace EcommGroceryStore.Apps.Admin
             BindSubCategory();
         }
 
-        protected void lnkRemove_Click(object sender, EventArgs e)
-        {
-            LinkButton lnkRemove = (LinkButton)sender;
-            int Id = Convert.ToInt32(lnkRemove.CommandArgument);
-            using (SubCategoryMasterRepository repository = new SubCategoryMasterRepository())
-            {
-                repository.Delete(Id);
-            }
-            BindSubCategory();
-        }
-
         protected void btnAddSubCategory_Click(object sender, EventArgs e)
         {
             string name = ((TextBox)gvSubCategory.FooterRow.FindControl("txtAddCategory")).Text;
@@ -114,7 +103,7 @@ namespace EcommGroceryStore.Apps.Admin
             {
                 using (MasterCategoryRepository repository = new MasterCategoryRepository())
                 {
-                    var mainCategory = repository.GetList(0).ToList();
+                    var mainCategory = repository.GetList(0).OrderBy(r => r.Name).ToList();
                     if (mainCategory != null)
                     {
                         ddl.DataSource = mainCategory;
@@ -124,11 +113,17 @@ namespace EcommGroceryStore.Apps.Admin
                         ddl.Items.Insert(0, new ListItem("-- Select Category --", "0"));
                     }
                 }
-                //if (e.Row.RowType == DataControlRowType.DataRow)
-                //{
-                //    ddl.SelectedValue = ((Customer)(e.Row.DataItem)).CategoryID.ToString();
-                //}
             }
+        }
+
+        protected void gvSubCategory_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            int subCategoryId = Convert.ToInt32(((Label)gvSubCategory.Rows[e.RowIndex].FindControl("lblCategoryId")).Text);
+            using (SubCategoryMasterRepository repository = new SubCategoryMasterRepository())
+            {
+                repository.Delete(subCategoryId);
+            }
+            BindSubCategory();
         }
     }
 }
