@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="EcommGroceryOnlineModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="EcommGroceryOnlineModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="AddressDetails">
     <Key>
       <PropertyRef Name="AddressId" />
@@ -124,6 +124,7 @@
     <Property Name="SubCategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="MainCategoryId" Type="int" Nullable="false" />
     <Property Name="Name" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="ImageURL" Type="varchar" MaxLength="250" />
   </EntityType>
   <EntityType Name="TransactionDetails">
     <Key>
@@ -352,7 +353,7 @@
   </Function>
   <Function Name="Sp_GetTransactionList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="CartId" Type="int" Mode="In" />
-    <Parameter Name="Search" Type="int" Mode="In" />
+    <Parameter Name="Op" Type="int" Mode="In" />
   </Function>
   <Function Name="Sp_GetUserList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="currentIndex" Type="int" Mode="In" />

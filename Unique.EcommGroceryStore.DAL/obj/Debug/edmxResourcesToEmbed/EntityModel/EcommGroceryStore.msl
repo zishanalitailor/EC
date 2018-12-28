@@ -132,6 +132,7 @@
     <EntitySetMapping Name="SubCategoryMaster">
       <EntityTypeMapping TypeName="EcommGroceryOnlineModel.SubCategoryMaster">
         <MappingFragment StoreEntitySet="SubCategoryMaster">
+          <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
           <ScalarProperty Name="SubCategoryId" ColumnName="SubCategoryId" />
           <ScalarProperty Name="MainCategoryId" ColumnName="MainCategoryId" />
           <ScalarProperty Name="Name" ColumnName="Name" />

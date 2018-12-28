@@ -22,16 +22,4 @@ namespace EcommGroceryStore.ViewModels
 }
 
 
-/*
-        ProductId  
-        ProductName  
-        MainCategoryName  
-        SubCategoryName 
-        Quantity  
-        Description  
-        ImageURL  
-        PricePerUnit  
-        Unit  
-        Status  
-
-*/
+ 

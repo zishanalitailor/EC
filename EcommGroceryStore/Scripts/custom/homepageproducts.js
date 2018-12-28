@@ -126,7 +126,13 @@ function generatecat_29Markup(productName, imageURL, description, quantity, pric
 }
 
 
-
+//first step call the webservice and get data
+//get subcategory
+function getcarouselsubcategory(mainCategoryName) {
+    return $.getJSON("/api/ProductDetails/GetAllSubCategory", { mainCategoryName: mainCategoryName },
+        function (data) {
+        });
+}
 
 
 //first step call the webservice and get data
@@ -135,6 +141,42 @@ function getcarouselcat_30products(mainCategoryName) {
        function (data) {
        });
 }
+
+//use the data to generate mark up for sub category
+function getHomepagesubCategoryAndGenerateHtml(data, divtag) {
+    $.each(data, function (key, val) {
+        var val2 = generatesubCategoryMarkup(val.Name, val.ImageURL);
+        $(divtag).append(val2);
+    });
+}
+//use the data to generate mark up for sub category
+function generatesubCategoryMarkup(productName, imageURL) {
+
+    var val = "<div class=\"item item-supercat respl-item\">"
+        + "<div class=\"item-inner\">"
+        + "     <div class=\"w-image-box\">"
+        + "         <span class=\"hover-background\"></span>"
+        + "         <div class=\"item-image\">"
+        + "             <a href=\"\\Details\\" + productName + "\" class=\"product-image rspl-image\"> "
+        + "                 <img src=\"\\" + imageURL + "\" alt=\"" + productName + "\" />"
+        + "             </a>"
+        + "         </div> "
+        + "     </div> "
+        + "     <div class=\"item-info\"> "
+        + "         <div class=\"item-title\" style=\"text-align:center;font-size: 14px;\">"
+        + "             <a href=\"\\Details\\" + productName + "\" title=\"" + productName + "\">"
+        + "               " + productName + ""
+        + "             </a>"
+        + "         </div> "
+        + "     </div> "
+        + "     <a class=\"product-image\" style=\"display:none;\" href=\"\\Details\\" + productName + "\"> </a>"
+        + " </div>"
+        + " </div>"
+        + " </div>";
+
+    return val;
+}
+
 
 //use the data to generate mark up 
 
@@ -187,9 +229,7 @@ function generatecat_30Markup(productName, imageURL, description, quantity, pric
 
     return val;
 }
-
-
-
+ 
 
 //first step call the webservice and get data
 function getcarouselcat_8products() {

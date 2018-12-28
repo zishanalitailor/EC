@@ -147,6 +147,7 @@
     <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="MainCategoryMaster" Relationship="Self.FK_SubCategoryMaster_MainCategoryMaster" FromRole="SubCategoryMaster" ToRole="MainCategoryMaster" />
     <NavigationProperty Name="ProductDetails" Relationship="Self.FK_ProductDetails_SubCategoryMaster" FromRole="SubCategoryMaster" ToRole="ProductDetails" />
+    <Property Name="ImageURL" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="TransactionDetails">
     <Key>
@@ -457,7 +458,7 @@
     </FunctionImport>
     <FunctionImport Name="Sp_GetTransactionList" ReturnType="Collection(EcommGroceryOnlineModel.Sp_GetTransactionList_Result)">
       <Parameter Name="CartId" Mode="In" Type="Int32" />
-      <Parameter Name="Search" Mode="In" Type="Int32" />
+      <Parameter Name="Op" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="Sp_GetUserList" ReturnType="Collection(EcommGroceryOnlineModel.Sp_GetUserList_Result)">
       <Parameter Name="currentIndex" Mode="In" Type="Int32" />

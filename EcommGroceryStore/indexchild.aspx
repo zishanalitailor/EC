@@ -54,8 +54,7 @@
                                         });
                                     });
                                     // ]]> 
-                                </script>
-
+                                </script> 
 
                                 <script type="text/javascript">
                                     // <![CDATA[ 
@@ -65,9 +64,7 @@
                                         $('.sm_megamenu_wrapper_horizontal_menu .rw-url > a.sm_megamenu_head').attr('href', 'index.html');
                                     });
                                     // ]]> 
-                                </script>
-
-
+                                </script> 
 
                                 <div class="block block-left-products">
                                     <div class="block-title">
@@ -124,16 +121,7 @@
                                          
                                         $(document).ready(function ($) {
 
-                                            /**
- * Accordion, jQuery Plugin
- *
- * This plugin provides an accordion with cookie support.
- *
- * Copyright (c) 2010 John Snyder (snyderplace.com)
- * @license http://www.snyderplace.com/accordion/license.txt New BSD
- * @version alpha 0.1
- */
-                                            (function ($) {
+                                           (function ($) {
                                                 $.fn.accordion_snyderplace = function (options) {
                                                     initialize(this, options);
                                                 };
@@ -650,11 +638,11 @@
                                         </div>
                                         <script>
                                             $(document).ready(function ($) {
-                                                getcarouselcat_30products('Pan Asian');
-                                                $.when(getcarouselcat_30products('Pan Asian')).done(function (data) {
+                                                getcarouselsubcategory('Pan Asian');
+                                                $.when(getcarouselsubcategory('Pan Asian')).done(function (data) {
                                                     if (data.length > 0) {
                                                         console.log('pan asian data length > 0');
-                                                        getHomepagecat_30productsAndGenerateHtml(data, "div.ltabs-items-container.slider-cat-30.carousel1");
+                                                        getHomepagesubCategoryAndGenerateHtml(data, "div.ltabs-items-container.slider-cat-30.carousel1");
                                                         var owl_cat_30 = $(".carousel1");
                                                         owl_cat_30.owlCarousel({
                                                             itemsCustom: [

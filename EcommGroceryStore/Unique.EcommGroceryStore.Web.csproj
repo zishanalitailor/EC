@@ -1586,6 +1586,7 @@
     <Compile Include="ViewModels\vmProductDetailsSummary.cs" />
     <Compile Include="ViewModels\vmProductDetailsWithSummary.cs" />
     <Compile Include="ViewModels\vmProductListMainSubCategories.cs" />
+    <Compile Include="ViewModels\vmSubCategoryDetails.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

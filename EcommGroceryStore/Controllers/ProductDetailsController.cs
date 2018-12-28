@@ -53,7 +53,6 @@ namespace EcommGroceryStore.Controllers
             });
         }
 
-
         public IQueryable<vmProductDetails> getVegOnlyList()
         {
             return dbContext.ProductDetails
@@ -88,6 +87,22 @@ namespace EcommGroceryStore.Controllers
                     PricePerUnit = x.PricePerUnit,
                     Unit = x.Unit,
                     Status = x.Status
+                });
+
+            return results;
+        }
+
+        public IQueryable<vmSubCategoryDetails> GetAllSubCategory(string mainCategoryName)
+        {
+            var results =
+                dbContext.SubCategoryMaster
+                .Where(x => x.MainCategoryMaster.Name == mainCategoryName)
+                .Select(x => new vmSubCategoryDetails
+                {
+                    MainCategoryId = x.MainCategoryId,
+                    Name = x.Name,
+                    SubCategoryId = x.SubCategoryId,
+                    ImageURL = x.ImageURL
                 });
 
             return results;
@@ -132,9 +147,6 @@ namespace EcommGroceryStore.Controllers
                 });
         }
 
-
-
-
         public vmProductDetailsWithSummary getFruitsListWithSummary(string sort, int pagesize, int index, bool all, int min, int max, string querystring)
         {
             vmProductDetailsWithSummary mainquery = new vmProductDetailsWithSummary();
@@ -174,7 +186,6 @@ namespace EcommGroceryStore.Controllers
             return mainquery;
         }
 
-
         public IQueryable<vmProductDetails> getFruitsList(string sort, int pagesize, int index, bool all)
         {
             IQueryable<vmProductDetails> query;
@@ -197,7 +208,6 @@ namespace EcommGroceryStore.Controllers
 
             return query;
         }
-
 
         public IQueryable<vmProductDetails> getFruitsListold(int startindex, int stopindex)
         {
@@ -238,7 +248,6 @@ namespace EcommGroceryStore.Controllers
             });
         }
 
-
         public vmProductListMainSubCategories getProductDetailsList1()
         {
             dbContext.Configuration.ProxyCreationEnabled = false;
@@ -250,7 +259,6 @@ namespace EcommGroceryStore.Controllers
 
             return obj;
         }
-
 
         //public IQueryable<vmProductDetails> getProductList() {
         //    return dbContext.ProductDetails.Select(x => new vmProductDetails
@@ -303,7 +311,6 @@ namespace EcommGroceryStore.Controllers
 
             return Ok(transactionDetails);
         }
-
 
         // POST api/ProductDetails
         [ResponseType(typeof(ProductDetails))]
@@ -378,7 +385,6 @@ namespace EcommGroceryStore.Controllers
             return Ok(productdetails);
             //}
         }
-
 
         //[ResponseType(typeof(Cart))]
         //public IHttpActionResult PostCart(Cart cart)
