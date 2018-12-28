@@ -56,79 +56,108 @@ namespace EcommGroceryStore.Controllers
 
         public IQueryable<vmProductDetails> getVegOnlyList()
         {
-            return dbContext.ProductDetails.Where(x=>x.SubCategoryId == 1).Select(x => new vmProductDetails
-            {
-                ProductId = x.ProductId,
-                ProductName = x.ProductName,
-                SubCategoryName = dbContext.ProductDetails.Where(xx => xx.SubCategoryId == x.SubCategoryId).Select(y => y.SubCategoryMaster.Name).FirstOrDefault(),
-                Quantity = x.Quantity,
-                Description = x.Description,
-                ImageURL = x.ImageURL,
-                PricePerUnit = x.PricePerUnit,
-                Unit = x.Unit,
-                Status = x.Status
-            });
+            return dbContext.ProductDetails
+                .Where(x => x.SubCategoryId == 1)
+                .Select(x => new vmProductDetails
+                {
+                    ProductId = x.ProductId,
+                    ProductName = x.ProductName,
+                    SubCategoryName = dbContext.ProductDetails.Where(xx => xx.SubCategoryId == x.SubCategoryId).Select(y => y.SubCategoryMaster.Name).FirstOrDefault(),
+                    Quantity = x.Quantity,
+                    Description = x.Description,
+                    ImageURL = x.ImageURL,
+                    PricePerUnit = x.PricePerUnit,
+                    Unit = x.Unit,
+                    Status = x.Status
+                });
+        }
+
+        public IQueryable<vmProductDetails> GetAllItemsFromMainCategory(string mainCategoryName)
+        {
+            var results =
+                dbContext.ProductDetails
+                .Where(x => x.SubCategoryMaster.MainCategoryMaster.Name == mainCategoryName)
+                .Select(x => new vmProductDetails
+                {
+                    ProductId = x.ProductId,
+                    ProductName = x.ProductName,
+                    SubCategoryName = dbContext.ProductDetails.Where(xx => xx.SubCategoryId == x.SubCategoryId).Select(y => y.SubCategoryMaster.Name).FirstOrDefault(),
+                    Quantity = x.Quantity,
+                    Description = x.Description,
+                    ImageURL = x.ImageURL,
+                    PricePerUnit = x.PricePerUnit,
+                    Unit = x.Unit,
+                    Status = x.Status
+                });
+
+            return results;
         }
 
         public IQueryable<vmProductDetails> getFruitsOnlyList()
         {
-            return dbContext.ProductDetails.Where(x => x.SubCategoryId == 2).Select(x => new vmProductDetails
-            {
-                ProductId = x.ProductId,
-                ProductName = x.ProductName,
-                SubCategoryName = dbContext.ProductDetails.Where(xx => xx.SubCategoryId == x.SubCategoryId).Select(y => y.SubCategoryMaster.Name).FirstOrDefault(),
-                Quantity = x.Quantity,
-                Description = x.Description,
-                ImageURL = x.ImageURL,
-                PricePerUnit = x.PricePerUnit,
-                Unit = x.Unit,
-                Status = x.Status
-            });
+            return
+                dbContext.ProductDetails
+                .Where(x => x.SubCategoryId == 2)
+                .Select(x => new vmProductDetails
+                {
+                    ProductId = x.ProductId,
+                    ProductName = x.ProductName,
+                    SubCategoryName = dbContext.ProductDetails.Where(xx => xx.SubCategoryId == x.SubCategoryId).Select(y => y.SubCategoryMaster.Name).FirstOrDefault(),
+                    Quantity = x.Quantity,
+                    Description = x.Description,
+                    ImageURL = x.ImageURL,
+                    PricePerUnit = x.PricePerUnit,
+                    Unit = x.Unit,
+                    Status = x.Status
+                });
         }
 
         public IQueryable<vmProductDetails> GetProductDetails(string ProductName)
         {
 
-            return dbContext.ProductDetails.Where(y=>y.ProductName == ProductName).Select(x => new vmProductDetails
-            {
-                ProductId = x.ProductId,
-                ProductName = x.ProductName, 
-                MainCategoryName = x.SubCategoryMaster.MainCategoryMaster.Name,
-                SubCategoryName = x.SubCategoryMaster.Name,
-                Quantity = x.Quantity,
-                Description = x.Description,
-                ImageURL = x.ImageURL,
-                PricePerUnit = x.PricePerUnit,
-                Unit = x.Unit,
-                Status = x.Status
-            });  
+            return dbContext.ProductDetails
+                .Where(y => y.ProductName == ProductName)
+                .Select(x => new vmProductDetails
+                {
+                    ProductId = x.ProductId,
+                    ProductName = x.ProductName,
+                    MainCategoryName = x.SubCategoryMaster.MainCategoryMaster.Name,
+                    SubCategoryName = x.SubCategoryMaster.Name,
+                    Quantity = x.Quantity,
+                    Description = x.Description,
+                    ImageURL = x.ImageURL,
+                    PricePerUnit = x.PricePerUnit,
+                    Unit = x.Unit,
+                    Status = x.Status
+                });
         }
 
 
-         
 
-        public vmProductDetailsWithSummary getFruitsListWithSummary(string sort, int pagesize, int index, bool all , int min, int max, string querystring)
+
+        public vmProductDetailsWithSummary getFruitsListWithSummary(string sort, int pagesize, int index, bool all, int min, int max, string querystring)
         {
-             vmProductDetailsWithSummary mainquery = new vmProductDetailsWithSummary(); 
-             vmProductDetailsSummary  vmsummary = new vmProductDetailsSummary();
-             IQueryable<vmProductDetails> query;
-             query = (from x in dbContext.ProductDetails
-                      where x.SubCategoryMaster.MainCategoryMaster.Name == querystring && ((min != -1 && max != -1) ? (x.PricePerUnit >= min && x.PricePerUnit <= max) : x.PricePerUnit >= 0) 
-                      select new vmProductDetails
-                      {
-                          ProductId = x.ProductId,
-                          ProductName = x.ProductName,
-                          SubCategoryName = x.SubCategoryMaster.Name,
-                          Quantity = x.Quantity,
-                          Description = x.Description,
-                          ImageURL = x.ImageURL,
-                          PricePerUnit = x.PricePerUnit,
-                          Unit = x.Unit,
-                          Status = x.Status
-                      });
+            vmProductDetailsWithSummary mainquery = new vmProductDetailsWithSummary();
+            vmProductDetailsSummary vmsummary = new vmProductDetailsSummary();
+            IQueryable<vmProductDetails> query;
+            query = (from x in dbContext.ProductDetails
+                     where x.SubCategoryMaster.MainCategoryMaster.Name == querystring &&
+                     ((min != -1 && max != -1) ? (x.PricePerUnit >= min && x.PricePerUnit <= max) : x.PricePerUnit >= 0)
+                     select new vmProductDetails
+                     {
+                         ProductId = x.ProductId,
+                         ProductName = x.ProductName,
+                         SubCategoryName = x.SubCategoryMaster.Name,
+                         Quantity = x.Quantity,
+                         Description = x.Description,
+                         ImageURL = x.ImageURL,
+                         PricePerUnit = x.PricePerUnit,
+                         Unit = x.Unit,
+                         Status = x.Status
+                     });
             query = query.OrderByField(sort, pagesize, index, all, true);
 
-             
+
             vmsummary.TotalRecords = query.Count();
             if (query.Count() == 0)
             {
@@ -172,18 +201,21 @@ namespace EcommGroceryStore.Controllers
 
         public IQueryable<vmProductDetails> getFruitsListold(int startindex, int stopindex)
         {
-            IQueryable<vmProductDetails> query = dbContext.ProductDetails.Where(o => o.SubCategoryId == 2).Select(x => new vmProductDetails
-            {
-                ProductId = x.ProductId,
-                ProductName = x.ProductName,
-                SubCategoryName = x.SubCategoryMaster.Name,
-                Quantity = x.Quantity,
-                Description = x.Description,
-                ImageURL = x.ImageURL,
-                PricePerUnit = x.PricePerUnit,
-                Unit = x.Unit,
-                Status = x.Status
-            });
+            IQueryable<vmProductDetails> query =
+                dbContext.ProductDetails
+                .Where(o => o.SubCategoryId == 2)
+                .Select(x => new vmProductDetails
+                {
+                    ProductId = x.ProductId,
+                    ProductName = x.ProductName,
+                    SubCategoryName = x.SubCategoryMaster.Name,
+                    Quantity = x.Quantity,
+                    Description = x.Description,
+                    ImageURL = x.ImageURL,
+                    PricePerUnit = x.PricePerUnit,
+                    Unit = x.Unit,
+                    Status = x.Status
+                });
             //query = query.OrderByField("ProductName", false, startindex, stopindex);
             return query;
         }
@@ -289,7 +321,7 @@ namespace EcommGroceryStore.Controllers
 
             return CreatedAtRoute("ActionApi", new { id = productdetails.ProductId }, productdetails);
         }
-         
+
         // PUT api/<controller>/5
         public IHttpActionResult PutProductDetails(int id, ProductDetails productdetails)
         {
@@ -345,7 +377,7 @@ namespace EcommGroceryStore.Controllers
 
             return Ok(productdetails);
             //}
-        }  
+        }
 
 
         //[ResponseType(typeof(Cart))]
@@ -355,7 +387,7 @@ namespace EcommGroceryStore.Controllers
         //    {
         //        return BadRequest(ModelState);
         //    }
-             
+
         //    dbContext.Cart.Add(cart);
         //    dbContext.SaveChanges();  
         //    return CreatedAtRoute("DefaultApi", new { id = cart.CartId}, cart);

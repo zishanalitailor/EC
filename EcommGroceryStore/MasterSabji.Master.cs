@@ -13,7 +13,7 @@ namespace EcommGroceryStore
     public partial class MasterSabji : MasterPage
     {  
         protected void Page_Load(object sender, EventArgs e)
-        {
+        { 
         }
 
         protected void lnkLogOut_Click(object sender, EventArgs e)

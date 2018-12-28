@@ -16,7 +16,7 @@
                                     </ul>
                                 </li>
                             </ul>
-                            <form action="http://www.onlinesabjiwala.com/checkout/cart/updatePost/" method="post">
+                            <form action="http://www.theanchorvizag.com/checkout/cart/updatePost/" method="post">
                                 <input name="form_key" type="hidden" value="pQkADNkFwZmhwAqv">
                                 <fieldset>
                                     <table id="shopping-cart-table" class="data-table cart-table">
@@ -53,7 +53,7 @@
                                         <div class="col-1 col-lg-4 col-md-4 col-sm-6 col-xs-12">
                                         </div>
                                         <div class="col-2 col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                                            <form id="discount-coupon-form" action="http://www.onlinesabjiwala.com/checkout/cart/couponPost/" method="post">
+                                            <form id="discount-coupon-form" action="http://www.theanchorvizag.com/checkout/cart/couponPost/" method="post">
                                                 <div class="discount">
                                                     <h2>Discount Codes</h2>
                                                     <div class="discount-form">
@@ -113,7 +113,7 @@
                                                     <li>
                                                         <asp:Button  OnClick="btnCheckOut_Click" runat="server" id="btncheckout" Text="Confirm Order" />
                                                         <asp:LinkButton class="button btn-proceed-checkout btn-checkout no-checkout"  OnClick="btnCheckOut_Click" ID="lnkCheckOut" runat="server" >Confirm Order</asp:LinkButton>
-                                                        <%-- <button type="button" title="Proceed to Checkout" class="button btn-proceed-checkout btn-checkout no-checkout" onclick="window.location='http://www.onlinesabjiwala.com/checkout/onepage/';"><span><span>Confirm Order</span></span></button--%>
+                                                        <%-- <button type="button" title="Proceed to Checkout" class="button btn-proceed-checkout btn-checkout no-checkout" onclick="window.location='http://www.theanchorvizag.com/checkout/onepage/';"><span><span>Confirm Order</span></span></button--%>
                                                     </li>
                                                 </ul>
                                             </div>

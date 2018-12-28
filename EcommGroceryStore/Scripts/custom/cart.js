@@ -183,35 +183,3 @@ function generateHiddenCart(data) {
         }
     }
 }
-
-/*
-<ol id="minicart-sidebar" class="mini-products-list">  
-    <li class="item last odd">
-        <a href="http://www.onlinesabjiwala.com/garlic.html" title="Garlic" class="product-image">
-            <img src="http://www.onlinesabjiwala.com/media/catalog/product/cache/1/thumbnail/72x72/9df78eab33525d08d6e5fb8d27136e95/g/a/garlic1.jpg" alt="Garlic"></a>
-
-        <div class="detail-item">
-            <div class="product-details">
-                <a href="http://www.onlinesabjiwala.com/checkout/cart/delete/id/31592/uenc/aHR0cDovL3d3dy5vbmxpbmVzYWJqaXdhbGEuY29tL2NoZWNrb3V0L2NhcnQvYWRkL3VlbmMvYUhSMGNEb3ZMM2QzZHk1dmJteHBibVZ6WVdKcWFYZGhiR0V1WTI5dEwyZGhjbXhwWXk1b2RHMXNQMU5KUkQwNE1Ua3pNakl6TWpBM09XRXhZV0prTmpnMU5EQmtOalkxTm1WbE4yWTFOQ1pmWDE5VFNVUTlWUSwsL3Byb2R1Y3QvOC9mb3JtX2tleS8yRVJCY3VMcUpGMVJpMW14Lw,,/" title="Remove This Item" onclick="return confirm('Are you sure you would like to remove this item from the shopping cart?');" class="btn-remove"><span></span></a>
-                <a href="http://www.onlinesabjiwala.com/checkout/cart/configure/id/31592/" title="Edit item" class="btn-edit"><span></span></a>
-
-                <div class="rating-container">
-                    <p class="no-rating"><a title="Write Your Review" href="http://www.onlinesabjiwala.com/review/product/list/id/8/#review-form">Write Your Review</a></p>
-                </div> 
-                <p class="product-name">
-                    <a title="Garlic" href="http://www.onlinesabjiwala.com/garlic.html">Garlic</a>
-                    <span class="qty-number">03</span>
-                </p> 
-            </div>
-
-            <div class="product-details-bottom"> 
-                <span class="price">₹55.00</span> 
-                <!--p-->
-                <!--p-->
-            </div>
-        </div>
-
-        <!--div class="edit-remove"></div-->
-    </li>
-</ol>
-*/

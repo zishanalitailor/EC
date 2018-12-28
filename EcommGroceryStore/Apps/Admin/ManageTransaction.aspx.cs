@@ -45,7 +45,7 @@ namespace EcommGroceryStore.Apps.Admin
             SqlParameter p2 = DataAccessLayer.CreateSqlParameter("Search", DbType.Int32, search);
             SqlParameter[] ps = new SqlParameter[] { p1, p2 };
             DataTable dt = DataAccessLayer.LoadTabularDataInDataTable("Sp_GetTransactionList", CommandType.StoredProcedure, ps);
-            if (dt != null && dt.Rows.Count > 0)
+            if (dt.Rows.Count > 0)
                 gv.DataSource = dt;
             gv.DataBind();
         }

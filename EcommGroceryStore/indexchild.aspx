@@ -113,7 +113,7 @@
                                                 <div id="section4" class="accordion accordion-close"><span>What are the modes of payment?</span></div>
                                                 <div class="container-accordion" style="display: none;">
                                                     <div class="content">
-                                                        You can pay for your order on Onlinesabjiwala.com using the following modes of payment:<br>
+                                                        You can pay for your order on TheAnchorvizag.com using the following modes of payment:<br>
                                                         a. Cash on delivery
                                                     </div>
                                                 </div>
@@ -622,79 +622,347 @@
                                 </div>
                             </div>--%>
 
+                             
 
-
-
-                            <div id="sm_listing_tabs_16786026171462422076" class="super-category-block first-load">
+                            <div id="sm_listing_tabs_167860261714624220761" class="super-category-block first-load">
 
                                 <div class="block-title-default">
                                     <h2>
-                                        <a title="Vegetables" href="products/vegetables"><span>Vegetables</span></a>
-                                    </h2>
-
-                                    <div style="display: none;" class="category-wrap-cat">
-                                        <ul class="cat-list">
-
-                                            <li class="item">
-                                                <a href="fruits-vegetables/vegetables/seasonal-vegetables.html">Seasonal Vegetables									</a>
-                                            </li>
-                                            <li class="item">
-                                                <a href="fruits-vegetables/vegetables/green-leafy-vegetables.html">Green Leafy Vegetables 									</a>
-                                            </li>
-                                            <li class="item">
-                                                <a href="fruits-vegetables/vegetables/exotic-vegetables.html">Exotic Vegetables									</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-
-
+                                        <a title="Vegetables" href="products/vegetables"><span>Pan Asian</span></a>
+                                    </h2> 
+                                </div> 
 
                                 <div class="supercat-des">
                                 </div>
 
                                 <div class="super-cat-wrapper">
                                     <div class="customNavigation custom-nav-default">
-                                        <a title="Previous" class="button-default prev-cat prev-super-cat-30 icon-angle-left"></a>
-                                        <a title="Next" class="button-default next-cat next-super-cat-30 icon-angle-right"></a>
+                                        <a title="Previous" class="button-default prev-cat prev-super-cat-30 prev-carousel1 icon-angle-left"></a>
+                                        <a title="Next" class="button-default next-cat next-super-cat-30 next-carousel1 icon-angle-right"></a>
                                     </div>
 
                                     <div class="overflow-owl-slider">
                                         <div class="border-cat">
                                             <div class="rw-margin">
-                                                <div class="ltabs-items-container slider-cat-30">
+                                                <div class="ltabs-items-container slider-cat-30 carousel1">
                                                 </div>
                                             </div>
                                         </div>
                                         <script>
                                             $(document).ready(function ($) {
-                                                getcarouselcat_30products();
-                                                $.when(getcarouselcat_30products()).done(function (data) {
-                                                    getHomepagecat_30productsAndGenerateHtml(data);
-                                                    var owl_cat_30 = $(".slider-cat-30");
-                                                    owl_cat_30.owlCarousel({
-                                                        itemsCustom: [
-                                                        [0, 1],
-                                                        [480, 2],
-                                                        [768, 3],
-                                                        [992, 3],
-                                                        [1200, 4]
-                                                        ],
-                                                        navigation: false, // Show next and prev buttons
-                                                        slideSpeed: 800,
-                                                        stopOnHover: true,
-                                                        paginationSpeed: 400,
-                                                        autoPlay: true,
-                                                        pagination: false,
-                                                    });
+                                                getcarouselcat_30products('Pan Asian');
+                                                $.when(getcarouselcat_30products('Pan Asian')).done(function (data) {
+                                                    if (data.length > 0) {
+                                                        console.log('pan asian data length > 0');
+                                                        getHomepagecat_30productsAndGenerateHtml(data, "div.ltabs-items-container.slider-cat-30.carousel1");
+                                                        var owl_cat_30 = $(".carousel1");
+                                                        owl_cat_30.owlCarousel({
+                                                            itemsCustom: [
+                                                                [0, 1],
+                                                                [480, 2],
+                                                                [768, 3],
+                                                                [992, 3],
+                                                                [1200, 4]
+                                                            ],
+                                                            navigation: false, // Show next and prev buttons
+                                                            slideSpeed: 800,
+                                                            stopOnHover: true,
+                                                            paginationSpeed: 400,
+                                                            autoPlay: true,
+                                                            pagination: false,
+                                                        });
 
-                                                    $(".next-super-cat-30").click(function () {
-                                                        owl_cat_30.trigger('owl.next');
-                                                    });
-                                                    $(".prev-super-cat-30").click(function () {
-                                                        owl_cat_30.trigger('owl.prev');
-                                                    });
+                                                        $(".prev-carousel1").show();
+                                                        $(".next-carousel1").show();
+
+                                                        $(".prev-carousel1").click(function () {
+                                                            owl_cat_30.trigger('owl.next');
+                                                        });
+                                                        $(".next-carousel1").click(function () {
+                                                            owl_cat_30.trigger('owl.prev');
+                                                        });
+                                                    }
+                                                    else {
+                                                        $(".prev-carousel1").hide();
+                                                        $(".next-carousel1").hide();
+                                                    }
+                                                });
+                                            });
+                                        </script>
+                                    </div>
+
+                                </div>
+                            </div>
+                            
+                            <div id="sm_listing_tabs_167860261714624220762" class="super-category-block first-load">
+
+                                <div class="block-title-default">
+                                    <h2>
+                                        <a title="Vegetables" href="products/vegetables"><span>Pan Indian</span></a>
+                                    </h2> 
+                                </div> 
+
+                                <div class="supercat-des">
+                                </div>
+
+                                <div class="super-cat-wrapper">
+                                    <div class="customNavigation custom-nav-default">
+                                        <a title="Previous" class="button-default prev-cat prev-super-cat-30 prev-carousel2 icon-angle-left"></a>
+                                        <a title="Next" class="button-default next-cat next-super-cat-30 next-carousel2 icon-angle-right"></a>
+                                    </div>
+
+                                    <div class="overflow-owl-slider">
+                                        <div class="border-cat">
+                                            <div class="rw-margin">
+                                                <div class="ltabs-items-container slider-cat-30 carousel2">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <script>
+                                            $(document).ready(function ($) {
+                                                getcarouselcat_30products('Pan Indian');
+                                                $.when(getcarouselcat_30products('Pan Indian')).done(function (data) {
+                                                    if (data.length > 0) {
+                                                        console.log('Pan Indian data length > 0');
+                                                        getHomepagecat_30productsAndGenerateHtml(data, "div.ltabs-items-container.slider-cat-30.carousel2");
+                                                        var owl_cat_30 = $(".carousel2");
+                                                        owl_cat_30.owlCarousel({
+                                                            itemsCustom: [
+                                                                [0, 1],
+                                                                [480, 2],
+                                                                [768, 3],
+                                                                [992, 3],
+                                                                [1200, 4]
+                                                            ],
+                                                            navigation: false, // Show next and prev buttons
+                                                            slideSpeed: 800,
+                                                            stopOnHover: true,
+                                                            paginationSpeed: 400,
+                                                            autoPlay: true,
+                                                            pagination: false,
+                                                        });
+
+                                                        $(".prev-carousel2").show();
+                                                        $(".next-carousel2").show();
+
+                                                        $(".prev-carousel2").click(function() {
+                                                            owl_cat_30.trigger('owl.next');
+                                                        });
+                                                        $(".next-carousel2").click(function() {
+                                                            owl_cat_30.trigger('owl.prev');
+                                                        });
+                                                    }
+                                                    else {
+                                                        $(".prev-carousel2").hide();
+                                                        $(".next-carousel2").hide();
+                                                    }
+                                                });
+                                            });
+                                        </script>
+                                    </div>
+
+                                </div>
+                            </div>
+                            
+                            <div id="sm_listing_tabs_167860261714624220763" class="super-category-block first-load">
+
+                                <div class="block-title-default">
+                                    <h2>
+                                        <a title="Continental" href="products/vegetables"><span>Continental</span></a>
+                                    </h2> 
+                                </div> 
+
+                                <div class="supercat-des">
+                                </div>
+
+                                <div class="super-cat-wrapper">
+                                    <div class="customNavigation custom-nav-default">
+                                        <a title="Previous" class="button-default prev-cat prev-super-cat-30 prev-carousel3 icon-angle-left"></a>
+                                        <a title="Next" class="button-default next-cat next-super-cat-30 next-carousel3 icon-angle-right"></a>
+                                    </div>
+
+                                    <div class="overflow-owl-slider">
+                                        <div class="border-cat">
+                                            <div class="rw-margin">
+                                                <div class="ltabs-items-container slider-cat-30 carousel3">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <script>
+                                            $(document).ready(function ($) {
+                                                getcarouselcat_30products('Continental');
+                                                $.when(getcarouselcat_30products('Continental')).done(function (data) {
+                                                    if (data.length > 0) { 
+                                                        getHomepagecat_30productsAndGenerateHtml(data, "div.ltabs-items-container.slider-cat-30.carousel3");
+                                                        var owl_cat_30 = $(".carousel3");
+                                                        owl_cat_30.owlCarousel({
+                                                            itemsCustom: [
+                                                                [0, 1],
+                                                                [480, 2],
+                                                                [768, 3],
+                                                                [992, 3],
+                                                                [1200, 4]
+                                                            ],
+                                                            navigation: false, // Show next and prev buttons
+                                                            slideSpeed: 800,
+                                                            stopOnHover: true,
+                                                            paginationSpeed: 400,
+                                                            autoPlay: true,
+                                                            pagination: false,
+                                                        });
+
+                                                        $(".prev-carousel3").show();
+                                                        $(".next-carousel3").show();
+
+                                                        $(".prev-carousel3").click(function() {
+                                                            owl_cat_30.trigger('owl.next');
+                                                        });
+                                                        $(".next-carousel3").click(function() {
+                                                            owl_cat_30.trigger('owl.prev');
+                                                        });
+                                                    }
+                                                    else {
+                                                        $(".prev-carousel3").hide();
+                                                        $(".next-carousel3").hide();
+                                                    }
+                                                });
+                                            });
+                                        </script>
+                                    </div>
+
+                                </div>
+                            </div>
+                            
+                            <div id="sm_listing_tabs_167860261714624220764" class="super-category-block first-load">
+
+                                <div class="block-title-default">
+                                    <h2>
+                                        <a title="South Indian" href="products/vegetables"><span>South Indian</span></a>
+                                    </h2> 
+                                </div> 
+
+                                <div class="supercat-des">
+                                </div>
+
+                                <div class="super-cat-wrapper">
+                                    <div class="customNavigation custom-nav-default">
+                                        <a title="Previous" class="button-default prev-cat prev-super-cat-30 prev-carousel4 icon-angle-left"></a>
+                                        <a title="Next" class="button-default next-cat next-super-cat-30 next-carousel4 icon-angle-right"></a>
+                                    </div>
+
+                                    <div class="overflow-owl-slider">
+                                        <div class="border-cat">
+                                            <div class="rw-margin">
+                                                <div class="ltabs-items-container slider-cat-30 carousel4">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <script>
+                                            $(document).ready(function ($) {
+                                                getcarouselcat_30products('South Indian');
+                                                $.when(getcarouselcat_30products('South Indian')).done(function (data) {
+                                                    if (data.length > 0) { 
+                                                        getHomepagecat_30productsAndGenerateHtml(data, "div.ltabs-items-container.slider-cat-30.carousel4");
+                                                        var owl_cat_30 = $(".carousel4");
+                                                        owl_cat_30.owlCarousel({
+                                                            itemsCustom: [
+                                                                [0, 1],
+                                                                [480, 2],
+                                                                [768, 3],
+                                                                [992, 3],
+                                                                [1200, 4]
+                                                            ],
+                                                            navigation: false, // Show next and prev buttons
+                                                            slideSpeed: 800,
+                                                            stopOnHover: true,
+                                                            paginationSpeed: 400,
+                                                            autoPlay: true,
+                                                            pagination: false,
+                                                        });
+
+                                                        $(".prev-carousel4").show();
+                                                        $(".next-carousel4").show();
+
+                                                        $(".prev-carousel4").click(function() {
+                                                            owl_cat_30.trigger('owl.next');
+                                                        });
+                                                        $(".next-carousel4").click(function() {
+                                                            owl_cat_30.trigger('owl.prev');
+                                                        });
+                                                    }
+                                                    else {
+                                                        $(".prev-carousel4").hide();
+                                                        $(".next-carousel4").hide();
+                                                    }
+                                                });
+                                            });
+                                        </script>
+                                    </div>
+
+                                </div>
+                            </div>
+                            
+                            <div id="sm_listing_tabs_167860261714624220765" class="super-category-block first-load">
+
+                                <div class="block-title-default">
+                                    <h2>
+                                        <a title="Desserts" href="products/vegetables"><span>Desserts</span></a>
+                                    </h2> 
+                                </div> 
+
+                                <div class="supercat-des">
+                                </div>
+
+                                <div class="super-cat-wrapper">
+                                    <div class="customNavigation custom-nav-default">
+                                        <a title="Previous" class="button-default prev-cat prev-super-cat-30 prev-carousel5 icon-angle-left"></a>
+                                        <a title="Next" class="button-default next-cat next-super-cat-30 next-carousel5 icon-angle-right"></a>
+                                    </div>
+
+                                    <div class="overflow-owl-slider">
+                                        <div class="border-cat">
+                                            <div class="rw-margin">
+                                                <div class="ltabs-items-container slider-cat-30 carousel5">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <script>
+                                            $(document).ready(function ($) {
+                                                getcarouselcat_30products('Desserts');
+                                                $.when(getcarouselcat_30products('Desserts')).done(function (data) {
+                                                    if (data.length > 0) { 
+                                                        getHomepagecat_30productsAndGenerateHtml(data, "div.ltabs-items-container.slider-cat-30.carousel5");
+                                                        var owl_cat_30 = $(".carousel5");
+                                                        owl_cat_30.owlCarousel({
+                                                            itemsCustom: [
+                                                                [0, 1],
+                                                                [480, 2],
+                                                                [768, 3],
+                                                                [992, 3],
+                                                                [1200, 4]
+                                                            ],
+                                                            navigation: false, // Show next and prev buttons
+                                                            slideSpeed: 800,
+                                                            stopOnHover: true,
+                                                            paginationSpeed: 400,
+                                                            autoPlay: true,
+                                                            pagination: false,
+                                                        });
+
+                                                        $(".prev-carousel5").show();
+                                                        $(".next-carousel5").show();
+
+                                                        $(".prev-carousel5").click(function() {
+                                                            owl_cat_30.trigger('owl.next');
+                                                        });
+                                                        $(".next-carousel5").click(function() {
+                                                            owl_cat_30.trigger('owl.prev');
+                                                        });
+                                                    }
+                                                    else {
+                                                        $(".prev-carousel5").hide();
+                                                        $(".next-carousel5").hide();
+                                                    }
                                                 });
                                             });
                                         </script>

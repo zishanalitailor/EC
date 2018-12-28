@@ -55,7 +55,7 @@ function getCookie(cname) {
 function checkCookie() {
     var cartid = getCookie("cartid");
     if (cartid === "") {
-        alert('i am called again');
+        //alert('i am called again');
         setCookie("cartid", document.getElementById('cartid').value, 30);
     }
 }
@@ -220,7 +220,7 @@ function EmptyCart(cd) {
 }
 
 
-if (document.getElementById('historyContrainer').value !== '') {
+if (document.getElementById('historyContrainer') != null && document.getElementById('historyContrainer').value !== '') {
     var userid = 2;
 
     var APIRoute = '/api/Cart/GetMyHistoryResult';

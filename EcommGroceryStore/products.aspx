@@ -104,7 +104,7 @@
                                         </noscript>
 
                                         <div class="page-title category-title title-r title-visible">
-                                            <h1>Fruits</h1>
+                                            <h1><span id="CategoryTitle"></span></h1>
                                         </div> 
                                         <div id="ajax-errors" style="display: none;">
                                             <ul class="messages">
@@ -399,6 +399,7 @@
                                                                 getFruits('Price', -1, 1, true, min, max, querystring);
                                                                 $.when(getFruits('Price', -1, 1, true, min, max, querystring)).done(function (data) {
                                                                     $("#fruitcount").val(data.vmProductDetailsSummary.TotalRecords);
+                                                                    $("#CategoryTitle").text(querystring);
                                                                     LoopAndGenerate(data.vmProductDetails, querystring);
                                                                     jQuery('#show_paginator,.show_paginator1').bootpag({
                                                                         total: 1,
@@ -429,6 +430,7 @@
 
                                                                     $("#price-filter-min-text").val(min);
                                                                     $("#price-filter-max-text").val(max);
+                                                                     
 
                                                                     $("#slider").slider({
                                                                         range: true,

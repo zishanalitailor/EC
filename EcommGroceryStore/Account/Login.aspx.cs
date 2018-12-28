@@ -40,18 +40,10 @@ namespace EcommGroceryStore.Account
                     using (UserRepository userRepository = new UserRepository(txtUserName.Value.Trim()))
                     {
                         if (userRepository.User.IsAccountLocked)
-                        {
-                            //if (userRepository.User.UserRoles.Contains(CustomRoleProvider.ROLEADMIN))
-                            //{
-                            //}
-                            //else if (userRepository.User.UserRoles.Contains(CustomRoleProvider.ROLEUSER))
-                            //{
-                            //}
-
+                        { 
                             FormsAuthentication.RedirectFromLoginPage(txtUserName.Value.Trim(), true);
                             FormsAuthentication.SetAuthCookie(txtUserName.Value.Trim(), true);
-                            string returnUrl = Request.QueryString["ReturnUrl"];
-                            if (returnUrl == null) returnUrl = "~/indexchild.aspx";
+                            string returnUrl = Request.QueryString["ReturnUrl"] ?? "~/indexchild.aspx";
                             Response.Redirect(returnUrl, false);
                         }
                         else

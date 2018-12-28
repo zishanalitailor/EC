@@ -23,8 +23,6 @@ namespace EcommGroceryStore.Account
         {
             if (!IsPostBack)
             {
-                if (HttpContext.Current.User.Identity.IsAuthenticated)
-                    Response.Redirect("~/indexchild.aspx");
                 BindDropdownList();
             }
         }

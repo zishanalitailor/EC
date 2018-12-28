@@ -240,8 +240,8 @@
                                                         </div>  
                                                          <div class="product-add-box">
                                                             <ul class="add-to-links">
-                                                                <li class="wishlist"><a href="http://www.onlinesabjiwala.com/wishlist/index/add/product/29/form_key/dVq8b97n8WRfZrE2/" onclick="productAddToCartForm.submitLight(this, this.href); return false;" class="link-wishlist" title="Add to Wishlist">Add to Wishlist</a></li>
-                                                                <li class="compare"><a href="http://www.onlinesabjiwala.com/catalog/product_compare/add/product/29/uenc/aHR0cDovL3d3dy5vbmxpbmVzYWJqaXdhbGEuY29tL2FwcGxlLWluZGlhbi5odG1sP1NJRD01ZWFiNzA0ZjIzOThjNjllNDhjMDgwYjAyYWYyMmVkNw,,/form_key/dVq8b97n8WRfZrE2/" class="link-compare" title="Add to Compare">Add to Compare</a></li>
+                                                                <li class="wishlist"><a href="http://www.theanchorvizag.com/wishlist/index/add/product/29/form_key/dVq8b97n8WRfZrE2/" onclick="productAddToCartForm.submitLight(this, this.href); return false;" class="link-wishlist" title="Add to Wishlist">Add to Wishlist</a></li>
+                                                                <li class="compare"><a href="http://www.theanchorvizag.com/catalog/product_compare/add/product/29/uenc/aHR0cDovL3d3dy5vbmxpbmVzYWJqaXdhbGEuY29tL2FwcGxlLWluZGlhbi5odG1sP1NJRD01ZWFiNzA0ZjIzOThjNjllNDhjMDgwYjAyYWYyMmVkNw,,/form_key/dVq8b97n8WRfZrE2/" class="link-compare" title="Add to Compare">Add to Compare</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>   
