@@ -348,8 +348,8 @@
                                                                 console.log('index ' + index);
                                                                 console.log('all ' + all);
                                                                
-                                                                getFruits(sort, pagesize, index, all, min, max, querystring);
-                                                                $.when(getFruits(sort, pagesize, index, all, min, max, querystring)).done(function (data) {
+                                                                getProducts(sort, pagesize, index, all, min, max, querystring);
+                                                                $.when(getProducts(sort, pagesize, index, all, min, max, querystring)).done(function (data) {
                                                                    // alert(data.vmProductDetailsSummary.TotalRecords);
                                                                     if (resettotal == true) {
                                                                         $("#fruitcount").val(data.vmProductDetailsSummary.TotalRecords);

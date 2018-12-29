@@ -1,5 +1,5 @@
 ﻿ 
-function fruitBox(productName, imageURL, description, quantity, pricePerUnit, unit) {
+function ProductBox(productName, imageURL, description, quantity, pricePerUnit, unit) {
 
     var val = "<div class=\"item col-lg-3 col-md-4 col-sm-4 respl-item\">"
               + "     <div class=\"item-inner\">"
@@ -78,12 +78,12 @@ function LoopAndGenerate(data, querystring) {
     var totalrecords = 0;
     jQuery("div.products-grid.row").empty();
     jQuery.each(data, function (key, val) {
-        var val2 = fruitBox(val.ProductName, val.ImageURL, val.Description, val.Quantity, val.PricePerUnit, val.Unit);
+        var val2 = ProductBox(val.ProductName, val.ImageURL, val.Description, val.Quantity, val.PricePerUnit, val.Unit);
         totalrecords++;
         jQuery("div.products-grid.row").append(val2);
     });
 }
-function getFruits(sort, pagesize, index, all, min, max, querystring) {
+function getProducts(sort, pagesize, index, all, min, max, querystring) {
   //  console.log('i, getFruits, got called parameters passed are ' + sort + ' ' + pagesize + ' ' + index + ' ' + all + ' ' + min + ' ' + max);
     var startindex = 0;
     var endindex = 0;

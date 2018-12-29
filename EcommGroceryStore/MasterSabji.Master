@@ -253,7 +253,7 @@
                                 <div class="col-lg-4 col-md-4 col-sm-4 logo-wrapper">
                                     <h1>
                                         <a title="The Anchor" href="/indexchild.aspx">
-                                            <img src="../skin/frontend/onlinesabjiwala/default/images/theanchor.png" alt="The Anchor" style="width: 80px;">
+                                            <img src="/../skin/frontend/onlinesabjiwala/default/images/theanchor.png" alt="The Anchor" style="width: 80px;">
                                         </a>
                                     </h1>
                                 </div>
@@ -856,7 +856,7 @@
                                 <div class="col-lg-3 col-md-3  col-sm-6">
                                     <div class="content-block-footer">
                                         <h2 class="footer-logo">
-                                            <img style="width: 80px;" alt="The Anchor" src="../skin/frontend/onlinesabjiwala/default/images/theanchor.png"><span style="display: none;">The Anchor</span></h2>
+                                            <img style="width: 80px;" alt="The Anchor" src="/../skin/frontend/onlinesabjiwala/default/images/theanchor.png"><span style="display: none;">The Anchor</span></h2>
                                         <p>theanchorvizag.com is&nbsp;prefered destination for buying Fresh Vegetables &amp; Fruits in India, offering fresh and best prices and a completely hassle-free experience with options of paying through Cash on Delivery. Now shop for your Daily vegetable needs with descriptions. Get the best prices and the best online Vegetable shopping experience every time.</p>
                                     </div>
                                 </div>

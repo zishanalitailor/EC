@@ -2,8 +2,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <script src="/../Scripts/custom/listfruits.js"></script>
-    <script src="/../Scripts/custom/cart.js"></script>
+    <script src="../../Scripts/custom/listfruits.js"></script>
+    <script src="../../Scripts/custom/cart.js"></script>
 
 
     <script>
@@ -32,7 +32,7 @@
                 $("#price_details").text('₹ ' + newdata[0].PricePerUnit);
                 $(".short-description").text(newdata[0].ProductName);
                 $("#yt_cloudzoom").attr('href', newdata[0].ImageURL);
-                $("#image").attr('src', '../' + newdata[0].ImageURL);
+                $("#image").attr('src', '/../' + newdata[0].ImageURL);
                 //data.ProductId
             });
             $("#AddToCart").click(function () {
