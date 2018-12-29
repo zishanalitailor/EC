@@ -54,7 +54,8 @@
                                         });
                                     });
                                     // ]]> 
-                                </script> 
+                                </script>
+
 
                                 <script type="text/javascript">
                                     // <![CDATA[ 
@@ -64,7 +65,9 @@
                                         $('.sm_megamenu_wrapper_horizontal_menu .rw-url > a.sm_megamenu_head').attr('href', 'index.html');
                                     });
                                     // ]]> 
-                                </script> 
+                                </script>
+
+
 
                                 <div class="block block-left-products">
                                     <div class="block-title">
@@ -110,7 +113,7 @@
                                                 <div id="section4" class="accordion accordion-close"><span>What are the modes of payment?</span></div>
                                                 <div class="container-accordion" style="display: none;">
                                                     <div class="content">
-                                                        You can pay for your order on TheAnchorvizag.com using the following modes of payment:<br>
+                                                        You can pay for your order on Onlinesabjiwala.com using the following modes of payment:<br>
                                                         a. Cash on delivery
                                                     </div>
                                                 </div>
@@ -121,7 +124,16 @@
                                          
                                         $(document).ready(function ($) {
 
-                                           (function ($) {
+                                            /**
+ * Accordion, jQuery Plugin
+ *
+ * This plugin provides an accordion with cookie support.
+ *
+ * Copyright (c) 2010 John Snyder (snyderplace.com)
+ * @license http://www.snyderplace.com/accordion/license.txt New BSD
+ * @version alpha 0.1
+ */
+                                            (function ($) {
                                                 $.fn.accordion_snyderplace = function (options) {
                                                     initialize(this, options);
                                                 };
@@ -640,8 +652,7 @@
                                             $(document).ready(function ($) {
                                                 getcarouselsubcategory('Pan Asian');
                                                 $.when(getcarouselsubcategory('Pan Asian')).done(function (data) {
-                                                    if (data.length > 0) {
-                                                        console.log('pan asian data length > 0');
+                                                    if (data.length > 0) { 
                                                         getHomepagesubCategoryAndGenerateHtml(data, "div.ltabs-items-container.slider-cat-30.carousel1");
                                                         var owl_cat_30 = $(".carousel1");
                                                         owl_cat_30.owlCarousel({
@@ -686,7 +697,7 @@
 
                                 <div class="block-title-default">
                                     <h2>
-                                        <a title="Vegetables" href="products/vegetables"><span>Pan Indian</span></a>
+                                        <a title="Vegetables" href="products/Pan Indian"><span>Pan Indian</span></a>
                                     </h2> 
                                 </div> 
 
@@ -708,11 +719,10 @@
                                         </div>
                                         <script>
                                             $(document).ready(function ($) {
-                                                getcarouselcat_30products('Pan Indian');
-                                                $.when(getcarouselcat_30products('Pan Indian')).done(function (data) {
-                                                    if (data.length > 0) {
-                                                        console.log('Pan Indian data length > 0');
-                                                        getHomepagecat_30productsAndGenerateHtml(data, "div.ltabs-items-container.slider-cat-30.carousel2");
+                                                getcarouselsubcategory('Pan Indian');
+                                                $.when(getcarouselsubcategory('Pan Indian')).done(function (data) {
+                                                    if (data.length > 0) { 
+                                                        getHomepagesubCategoryAndGenerateHtml(data, "div.ltabs-items-container.slider-cat-30.carousel2");
                                                         var owl_cat_30 = $(".carousel2");
                                                         owl_cat_30.owlCarousel({
                                                             itemsCustom: [
@@ -778,10 +788,10 @@
                                         </div>
                                         <script>
                                             $(document).ready(function ($) {
-                                                getcarouselcat_30products('Continental');
-                                                $.when(getcarouselcat_30products('Continental')).done(function (data) {
+                                                getcarouselsubcategory('Continental');
+                                                $.when(getcarouselsubcategory('Continental')).done(function (data) {
                                                     if (data.length > 0) { 
-                                                        getHomepagecat_30productsAndGenerateHtml(data, "div.ltabs-items-container.slider-cat-30.carousel3");
+                                                        getHomepagesubCategoryAndGenerateHtml(data, "div.ltabs-items-container.slider-cat-30.carousel3");
                                                         var owl_cat_30 = $(".carousel3");
                                                         owl_cat_30.owlCarousel({
                                                             itemsCustom: [
@@ -847,10 +857,10 @@
                                         </div>
                                         <script>
                                             $(document).ready(function ($) {
-                                                getcarouselcat_30products('South Indian');
-                                                $.when(getcarouselcat_30products('South Indian')).done(function (data) {
+                                                getcarouselsubcategory('South Indian');
+                                                $.when(getcarouselsubcategory('South Indian')).done(function (data) {
                                                     if (data.length > 0) { 
-                                                        getHomepagecat_30productsAndGenerateHtml(data, "div.ltabs-items-container.slider-cat-30.carousel4");
+                                                        getHomepagesubCategoryAndGenerateHtml(data, "div.ltabs-items-container.slider-cat-30.carousel4");
                                                         var owl_cat_30 = $(".carousel4");
                                                         owl_cat_30.owlCarousel({
                                                             itemsCustom: [
@@ -916,10 +926,10 @@
                                         </div>
                                         <script>
                                             $(document).ready(function ($) {
-                                                getcarouselcat_30products('Desserts');
-                                                $.when(getcarouselcat_30products('Desserts')).done(function (data) {
+                                                getcarouselsubcategory('Desserts');
+                                                $.when(getcarouselsubcategory('Desserts')).done(function (data) {
                                                     if (data.length > 0) { 
-                                                        getHomepagecat_30productsAndGenerateHtml(data, "div.ltabs-items-container.slider-cat-30.carousel5");
+                                                        getHomepagesubCategoryAndGenerateHtml(data, "div.ltabs-items-container.slider-cat-30.carousel5");
                                                         var owl_cat_30 = $(".carousel5");
                                                         owl_cat_30.owlCarousel({
                                                             itemsCustom: [
@@ -958,75 +968,7 @@
 
                                 </div>
                             </div>
-
-                            <div id="sm_listing_tabs_21028495471462422076" class="super-category-block first-load">
-                                <div class="block-title-default">
-                                    <h2>
-                                        <a title="Fruits" href="products/fruits"><span>Fruits</span></a>
-                                    </h2>
-                                    <div style="display: none;" class="category-wrap-cat">
-                                        <ul class="cat-list">
-                                            <li class="item">
-                                                <a href="fruits-vegetables/fruits/seasonal-fruits.html">Seasonal Fruits									</a>
-                                            </li>
-                                            <li class="item">
-                                                <a href="fruits-vegetables/fruits/imported-fruits.html">Imported Fruits									</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div class="supercat-des">
-                                </div>
-
-                                <div class="super-cat-wrapper">
-                                    <div class="customNavigation custom-nav-default">
-                                        <a title="Previous" class="button-default prev-cat prev-super-cat-8 icon-angle-left"></a>
-                                        <a title="Next" class="button-default next-cat next-super-cat-8 icon-angle-right"></a>
-                                    </div>
-
-                                    <div class="overflow-owl-slider">
-                                        <div class="border-cat">
-                                            <div class="rw-margin">
-                                                <div class="ltabs-items-container slider-cat-8">
-                                                </div>
-                                            </div>
-
-                                            <script>
-                                                $(document).ready(function ($) {
-                                                    getcarouselcat_8products();
-                                                    $.when(getcarouselcat_8products()).done(function (data) {
-                                                        getHomepagecat_8productsAndGenerateHtml(data);
-                                                        var owl_cat_8 = $(".slider-cat-8");
-                                                        owl_cat_8.owlCarousel({
-                                                            itemsCustom: [
-                                                            [0, 1],
-                                                            [480, 2],
-                                                            [768, 3],
-                                                            [992, 3],
-                                                            [1200, 4]
-                                                            ],
-                                                            navigation: false, // Show next and prev buttons
-                                                            slideSpeed: 800,
-                                                            stopOnHover: true,
-                                                            paginationSpeed: 400,
-                                                            autoPlay: true,
-                                                            pagination: false,
-                                                        });
-
-                                                        $(".next-super-cat-8").click(function () {
-                                                            owl_cat_8.trigger('owl.next');
-                                                        });
-                                                        $(".prev-super-cat-8").click(function () {
-                                                            owl_cat_8.trigger('owl.prev');
-                                                        });
-                                                    });
-                                                });
-                                            </script>
-                                        </div>
-                                    </div> 
-                                </div>
-                            </div>  
+                             
                         </div>
                     </div>
 

@@ -68,3 +68,4 @@ E:\Working\Restaurant\Anchor_Vizag\Unique.EcommGroceryStore.DAL\bin\Debug\Entity
 E:\Working\Restaurant\Anchor_Vizag\Unique.EcommGroceryStore.DAL\obj\Debug\Unique.EcommGroceryStore.DAL.csproj.CoreCompileInputs.cache
 E:\Working\Restaurant\Anchor_Vizag\Unique.EcommGroceryStore.DAL\obj\Debug\Unique.EcommGroceryStore.DAL.dll
 E:\Working\Restaurant\Anchor_Vizag\Unique.EcommGroceryStore.DAL\obj\Debug\Unique.EcommGroceryStore.DAL.pdb
+E:\Working\Restaurant\Anchor_Vizag\Unique.EcommGroceryStore.DAL\obj\Debug\Unique.EcommGroceryStore.DAL.csprojResolveAssemblyReference.cache

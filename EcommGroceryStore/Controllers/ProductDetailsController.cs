@@ -6,6 +6,8 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Text;
+using System.Web;
 using System.Web.Http;
 using System.Web.Http.Description;
 using Antlr.Runtime;
@@ -24,17 +26,6 @@ namespace EcommGroceryStore.Controllers
         public IQueryable<ProductDetails> GetProductDetails()
         {
             return dbContext.ProductDetails;
-            //try
-            //{
-            //    using (var dbContext = new EcommGroceryDataContext())
-            //    {
-            //        return dbContext.ProductDetails;
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    throw;
-            //}  
         }
 
         public IQueryable<vmProductDetails> getProductList()
@@ -71,6 +62,23 @@ namespace EcommGroceryStore.Controllers
                 });
         }
 
+        public IQueryable<vmSubCategoryDetails> GetAllSubCategory(string mainCategoryName)
+        {
+            var results =
+                dbContext.SubCategoryMaster
+                .Where(x => x.MainCategoryMaster.Name == mainCategoryName)
+                .Select(x => new vmSubCategoryDetails
+                {
+                    MainCategoryId = x.MainCategoryId,
+                    MainCategoryName = x.MainCategoryMaster.Name,
+                    Name = x.Name,
+                    SubCategoryId = x.SubCategoryId,
+                    ImageURL = x.ImageURL
+                }).OrderBy(r => r.Name);
+
+            return results;
+        }
+
         public IQueryable<vmProductDetails> GetAllItemsFromMainCategory(string mainCategoryName)
         {
             var results =
@@ -92,17 +100,26 @@ namespace EcommGroceryStore.Controllers
             return results;
         }
 
-        public IQueryable<vmSubCategoryDetails> GetAllSubCategory(string mainCategoryName)
+        public IQueryable<vmProductDetails> GetAllItemsFromMainCategoryAndSubCategory(string mainCategoryName, string subCategoryName)
         {
+
+            mainCategoryName = HttpUtility.UrlDecode(mainCategoryName, Encoding.UTF8);
+            subCategoryName = HttpUtility.UrlDecode(subCategoryName, Encoding.UTF8);
             var results =
-                dbContext.SubCategoryMaster
-                .Where(x => x.MainCategoryMaster.Name == mainCategoryName)
-                .Select(x => new vmSubCategoryDetails
+                dbContext.ProductDetails
+                .Where(x => x.SubCategoryMaster.MainCategoryMaster.Name == mainCategoryName)
+                .Where(x => x.SubCategoryMaster.Name == subCategoryName)
+                .Select(x => new vmProductDetails
                 {
-                    MainCategoryId = x.MainCategoryId,
-                    Name = x.Name,
-                    SubCategoryId = x.SubCategoryId,
-                    ImageURL = x.ImageURL
+                    ProductId = x.ProductId,
+                    ProductName = x.ProductName,
+                    SubCategoryName = dbContext.ProductDetails.Where(xx => xx.SubCategoryId == x.SubCategoryId).Select(y => y.SubCategoryMaster.Name).FirstOrDefault(),
+                    Quantity = x.Quantity,
+                    Description = x.Description,
+                    ImageURL = x.ImageURL,
+                    PricePerUnit = x.PricePerUnit,
+                    Unit = x.Unit,
+                    Status = x.Status
                 });
 
             return results;
@@ -149,11 +166,13 @@ namespace EcommGroceryStore.Controllers
 
         public vmProductDetailsWithSummary getFruitsListWithSummary(string sort, int pagesize, int index, bool all, int min, int max, string querystring)
         {
+            int subCategoryId = 0;
+            int.TryParse(querystring, out subCategoryId);
             vmProductDetailsWithSummary mainquery = new vmProductDetailsWithSummary();
             vmProductDetailsSummary vmsummary = new vmProductDetailsSummary();
             IQueryable<vmProductDetails> query;
             query = (from x in dbContext.ProductDetails
-                     where x.SubCategoryMaster.MainCategoryMaster.Name == querystring &&
+                     where x.SubCategoryId == subCategoryId &&
                      ((min != -1 && max != -1) ? (x.PricePerUnit >= min && x.PricePerUnit <= max) : x.PricePerUnit >= 0)
                      select new vmProductDetails
                      {
@@ -259,22 +278,6 @@ namespace EcommGroceryStore.Controllers
 
             return obj;
         }
-
-        //public IQueryable<vmProductDetails> getProductList() {
-        //    return dbContext.ProductDetails.Select(x => new vmProductDetails
-        //    {
-        //        ProductId = x.ProductId,
-        //        ProductName = x.ProductName,
-        //        SubCategoryId = x.SubCategoryId,
-        //        SubCategoryId = x.SubCategoryId,
-        //        Quantity = x.Quantity,
-        //        Description = x.Description,
-        //        ImageURL = x.ImageURL,
-        //        PricePerUnit = x.PricePerUnit,
-        //        Unit = x.Unit,
-        //        Status = x.Status
-        //    });
-        //}
 
         [ResponseType(typeof(ProductDetails))]
         public IHttpActionResult GetProductDetails(int id)

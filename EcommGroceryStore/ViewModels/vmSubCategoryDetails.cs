@@ -9,6 +9,7 @@ namespace EcommGroceryStore.ViewModels
     {
         public int SubCategoryId { get; set; }
         public int MainCategoryId { get; set; }
+        public string MainCategoryName { get; set; }
         public string Name { get; set; }
         public string ImageURL { get; set; }
     }

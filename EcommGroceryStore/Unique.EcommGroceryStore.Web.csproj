@@ -1146,6 +1146,7 @@
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="Apps\Admin\Handlers\GetProductListHandler.ashx" />
+    <Content Include="ProductData\exp.xlsx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -1597,7 +1598,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="ProductData\" />
     <Folder Include="ZipFiles\" />
   </ItemGroup>
   <ItemGroup>
