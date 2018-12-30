@@ -396,8 +396,8 @@
                                                                 $(".sort-by-wrap .overwrite-sortby").html($('#sort_by li a.selected').html());
                                                                 $('.category-products #limiter li:first-child a').removeClass('selected');
                                                                 $(".limiter-wrap .overwrite-limiter").html($('#limiter li a.selected').html());
-                                                                getFruits('Price', -1, 1, true, min, max, querystring);
-                                                                $.when(getFruits('Price', -1, 1, true, min, max, querystring)).done(function (data) {
+                                                                getProducts('Price', -1, 1, true, min, max, querystring);
+                                                                $.when(getProducts('Price', -1, 1, true, min, max, querystring)).done(function (data) {
                                                                     $("#fruitcount").val(data.vmProductDetailsSummary.TotalRecords);
                                                                     $("#CategoryTitle").text(querystring);
                                                                     LoopAndGenerate(data.vmProductDetails, querystring);
